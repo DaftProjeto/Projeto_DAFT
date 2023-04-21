@@ -6,4 +6,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Imagens\**" />
+    <Compile Remove="NovaPasta1\**" />
+    <Content Remove="Imagens\**" />
+    <Content Remove="NovaPasta1\**" />
+    <EmbeddedResource Remove="Imagens\**" />
+    <EmbeddedResource Remove="NovaPasta1\**" />
+    <None Remove="Imagens\**" />
+    <None Remove="NovaPasta1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Imagens\" />
+  </ItemGroup>
+
 </Project>

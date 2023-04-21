@@ -18,7 +18,7 @@ namespace Projeto_DAFT.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Gerenciador_Projetos()
         {
             return View();
         }
