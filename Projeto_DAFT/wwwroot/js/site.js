@@ -1,6 +1,7 @@
 ﻿const password = document.getElementById('password');
 const check = document.getElementById('check');
 
+
 function showHide() {
     if (password.type == 'password') {
         password.setAttribute('type', 'text');
@@ -11,3 +12,5 @@ function showHide() {
         check.classList.remove('hide');
     }
 }
+
+
