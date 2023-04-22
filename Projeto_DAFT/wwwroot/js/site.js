@@ -1,4 +1,13 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const password = document.getElementById('password');
+const check = document.getElementById('check');
 
-// Write your JavaScript code.
+function showHide() {
+    if (password.type == 'password') {
+        password.setAttribute('type', 'text');
+        check.classList.add('hide')
+    }
+    else {
+        password.setAttribute('type', 'password');
+        check.classList.remove('hide');
+    }
+}

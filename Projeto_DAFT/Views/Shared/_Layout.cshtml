@@ -11,7 +11,7 @@
 <body>
     <header >
         <nav style="background-color:#00648C; height:80px;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-            <div style="margin-left:80px; margin-right:80px" class="container-fluid">
+            <div style="margin-left:80px; margin-right:70px" class="container-fluid">
                 <a href="https://www.fatectq.edu.br/" target="_blank">
                 <img class="navbar-brand" width="120px;" src="/Imagens/Logo_Fatec.png" asp-area="" asp-controller="Home" asp-action="Index">
                 </a>
@@ -20,20 +20,66 @@
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li  class="nav-item">
                             
-                            <a style="font-size:25px; margin-left:30px; color:white" class="nav-link" asp-area="" asp-controller="Home" asp-action="Gerenciador_Projetos">Gerenciamento de Projetos</a>
+                            <a style="font-size:25px; margin-left:30px; color:white;" class="nav-link" asp-area="" asp-controller="Home" asp-action="Gerenciador_Projetos">Gerenciamento de Projetos</a>
                             
                         </li>
                         
                     </ul>
                     <li class="navbar nav-item">
-                        <img src="/Imagens/Login.png" width="80px" style="margin:0 auto" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">
+                        <a>
+                        <img type="button" src="/Imagens/Login.png" width="85px" data-bs-toggle="modal" 
+                        data-bs-target="#ModalLogin" style="margin:0 auto" class="btn nav-link text-dark" asp-area="">
+
+                            <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div style="border-radius:10px; height:620px" class="modal-content">
+                                        <div class="modal-header">
+                                            
+                                               <h1 style="transform:translate(368%)" class="modal-title fs-5" id="ModalLoginLabel">Entrar</h1>
+                                           
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="navbar">
+                                                <img style="transform: translate(65%)" width="200px" src="/Imagens/Icon_ModalLogin.png"/>
+                                            </div>
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Nome</label>
+                                                    <input type="text" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                                    <input type="password" class="form-control" id="password">                                                    
+                                                </div>
+                                                <div class="mb-3 form-check">
+                                                    <input onclick="showHide()" type="checkbox" class="form-check-input" id="check">
+                                                    <label class="form-check-label" for="exampleCheck1">Olhar senha</label>
+                                                </div>
+                                            </form>
+                                                                                                                          
+                                            <button style="background-color:black; color:white; width:25%; transform: translate(145%);" 
+                                            type="button" class="btn">Entrar</button>
+                                            </br>
+                                            </br>
+                                            <p style="float:left">Não possui conta?
+                                                <a href="/Cadastro/Cadastro">
+                                                    Clique aqui
+                                                </a>
+                                            </p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </li>
                 </div>
                 <a>
@@ -42,7 +88,8 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+
+    <div class="container">        
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
