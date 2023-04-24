@@ -1,2 +1,215 @@
-﻿body {
+﻿
+@media only screen and (min-width: 770px) {
+
+    #VoltarIcoCad {
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    #CadOri {
+        position: relative;
+        margin: auto;
+        font-size:35px;
+    }
+
+    #FundoCadOrientador {
+        background-color: white;
+        width: 460px;
+        border-radius: 10px;
+        height: 610px;
+    }
+
+    #OrientadorIcoCad {
+        width: 130px;
+        height: 130px;
+        position:relative;
+        top:10px;
+    }
+
+    #OrientadorNomeLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #NomeInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #OrientadorTeleLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #TeleInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #OrientadorEmaiLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #EmailInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #LattesLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #LattesInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #CheckLabEmail {
+        float: left;
+        margin-left: 5%;
+    }
+
+    #CheckLabDados {
+        float: left;
+        margin-left: 5%;
+    }
+
+    #ButtonCriar {
+        position: relative;
+        margin: 0;
+        top: 10px;
+        height: 40px;
+        width: 80px
+    }
+}
+
+
+@media only screen and (max-width: 769px) {
+
+    #VoltarIcoCad {
+        width: 30px;
+        height: 30px;
+        position: relative;
+    }
+
+    #CadOri {
+        position: relative;
+        margin: auto;
+        font-size: 25px;
+
+    }
+
+    #FundoCadOrientador {
+        background-color: white;
+        width: 380px;
+        border-radius: 10px;
+        height: 600px;
+    }
+
+    #OrientadorIcoCad {
+        width: 130px;
+        height: 130px;
+        position: relative;
+        top: 10px;
+    }
+
+    #OrientadorNomeLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #NomeInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #OrientadorTeleLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #TeleInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #OrientadorEmaiLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #EmailInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #LattesLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #LattesInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
+
+    #CheckLabEmail {
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #CheckLabDados {
+        float: left;
+        margin-left: 5%;
+        font-size: 15px;
+    }
+
+    #ButtonCriar {
+        position: relative;
+        margin-left: 150px;
+        margin-right: 150px;
+        top: 20px;
+        width: 80px;
+        height: 40px;
+    }
 }

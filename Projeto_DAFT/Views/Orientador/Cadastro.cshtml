@@ -1,2 +1,66 @@
-﻿
-<h1>teste orientador</h1>
+﻿@{
+    Layout = "Layout_Cadastro";
+}
+
+<head>
+
+    <link rel="stylesheet" href="/css/Orientador.css" asp-append-version="true" />
+
+</head>
+
+
+<center>
+
+    <div id="FundoCadOrientador">
+        <div class="modal-header" id="CadTextIco">
+            <a href="/Cadastro/Cadastro"> <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad" /></a>
+            <h1 id="CadOri">Cadastro do Orientador</h1>
+
+        </div>
+
+        <img src="/Imagens/Orientador icone.png" id="OrientadorIcoCad" />
+
+        <form method="">
+
+            <div id="Nome">
+                <label id="OrientadorNomeLab" class="form-label">Nome*</label>
+                <input type="text" name="" class="form-control" id="NomeInp" required />
+            </div>
+
+            <div id="Telefone">
+                <label id="OrientadorTeleLab" class="form-label">Telefone*</label>
+                <input type="text" name="" class="form-control" id="TeleInp" required placeholder="9999999999" />
+            </div>
+
+            <div id="Email">
+                <label id="OrientadorEmaiLab" class="form-label">Email*</label>
+                <input type="email" name="" class="form-control" id="EmailInp" required />
+            </div>
+
+
+
+            <div id="Lattes">
+                <label id="LattesLab" class="form-label">Lattes</label>
+                <input type="text" name="" class="form-control" id="LattesInp" />
+            </div>
+            <div id="CheckLabEmail">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Autorizo o recebimento de Emails
+                </label>
+            </div>
+            <br />
+
+            <div id="CheckLabDados">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">
+                    Autorizo o uso de meus dados
+                </label>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-dark" id="ButtonCriar">Criar</button>
+
+        </form>
+    </div>
+
+</center>

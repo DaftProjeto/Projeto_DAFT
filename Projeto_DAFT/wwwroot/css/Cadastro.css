@@ -13,7 +13,8 @@
         height: 200px;
         position: relative;
         margin: auto;
-        right: 130px;
+        visibility:visible;
+        right:130px;
     }
 
     #OrientadorIco {
@@ -22,6 +23,7 @@
         position: relative;
         margin: auto;
         left: 130px;
+        visibility: visible;
     }
 
     #AlunoText {
@@ -29,6 +31,7 @@
         text-decoration: none;
         position: relative;
         right: 150px;
+        bottom:10px;
     }
 
     #OrientadorText {
@@ -36,6 +39,7 @@
         text-decoration: none;
         position: relative;
         left: 150px;
+        bottom: 10px;
     }
 }
 
@@ -54,7 +58,8 @@
         height: 140px;
         position: relative;
         margin: auto;
-        right:50px;
+        right: 50px;
+        visibility: visible;
     }
 
     #OrientadorIco {
@@ -62,8 +67,8 @@
         height: 110px;
         position: relative;
         margin: auto;
-        left:50px;
-
+        left: 50px;
+        visibility: visible;
     }
 
     #AlunoText {
@@ -72,6 +77,7 @@
         position: relative;
         right: 55px;
         font-size: 15px;
+        bottom: 10px;
     }
 
     #OrientadorText {
@@ -80,5 +86,7 @@
         position: relative;
         left: 65px;
         font-size: 15px;
+        bottom: 10px;
     }
 }
+
