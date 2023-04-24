@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\Login.cshtml" />
+    <Content Remove="wwwroot\css\.editorconfig" />
   </ItemGroup>
 
 </Project>
