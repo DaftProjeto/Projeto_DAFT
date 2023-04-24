@@ -17,12 +17,12 @@
     background-color: white;
     width: 460px;
     border-radius: 10px;
-    height: 530px;
+    height: 610px;
 }
 
 #AlucoIcoCad{
 
-    width:150px;
+    width:140px;
     height:130px;
 }
 
@@ -40,4 +40,68 @@
     margin-left:5%;
     margin-right:5%;
     bottom:10px;
+}
+
+#AlunoTeleLab {
+    position: relative;
+    float: left;
+    margin-left: 5%;
+}
+
+#TeleInp {
+
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    bottom: 10px;
+}
+
+#AlunoEmaiLab {
+
+    position: relative;
+    float: left;
+    margin-left: 5%;
+}
+
+#EmailInp {
+
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    bottom: 10px;
+}
+
+#RALab {
+    position: relative;
+    float: left;
+    margin-left: 5%;
+}
+
+#RAInp {
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;       
+    bottom: 10px;
+}
+
+#CheckLabEmail{
+
+    float:left;
+    margin-left:5%; 
+
+}
+
+#CheckLabDados {
+
+    float: left;
+    margin-left: 5%;
+}
+
+#ButtonCriar {
+    position: relative;
+    margin: 0;
+    top:10px;
 }
