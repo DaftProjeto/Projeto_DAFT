@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Projeto_DAFT.styles.css" asp-append-version="true" />
+
 </head>
 <body style="background-color:#E9E9E9">
     <header >
         <nav style="background-color:#00648C; height:80px;" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
-            <div style="margin-left:80px; margin-right:70px" class="container-fluid">
+            <div style="position:relative;width:90%;margin-right:5%;margin-left:5%;" class="container-fluid">
                 <a href="https://www.fatectq.edu.br/" target="_blank">
                 <img class="navbar-brand" width="120px;" src="/Imagens/Logo_Fatec.png" asp-area="" asp-controller="Home" asp-action="Index">
                 </a>
@@ -35,7 +36,7 @@
                     <li class="navbar nav-item">
                         <a>
                         <img type="button" src="/Imagens/Login.png" width="85px" data-bs-toggle="modal" 
-                        data-bs-target="#ModalLogin" style="margin:0 auto" class="btn nav-link text-dark" asp-area="">
+                        data-bs-target="#ModalLogin" style="position:relative;margin-left:30%;" class="btn nav-link text-dark" asp-area="">
 
                             <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
                                 <div class="modal-dialog">
@@ -89,38 +90,14 @@
         </nav>
     </header>
 
-    <div class="container">        
+    <div >        
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+   
 
-    <footer style="background-color: #00648C;" class="border-top footer text-muted">
-        <div style="margin-left:80px; margin-right:80px; height: 5px" class="navbar-brand">
-            <div style="float:left" class="nav flex-column">
-                <a class="nav-link" type="text" style="color:white; margin-top:-1rem; font-size:14px">Criado por:</a>
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Alexandre Santos</a>             
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Arthur Durante</a>             
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Eduardo Berlardinuci</a>
-            </div>
-            <div style="float:left" class="nav flex-column">
-                <a class="nav-link" type="text" style="color:white; margin-top:-1rem; font-size:14px">Fernando Santos</a>
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Gabriel Marcondes</a>
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Lucas Seixas</a>
-                <a class="nav-link" type="text" style="color:white; margin-top:-3.5rem; font-size:15px">Vinicius Lessa</a>
-            </div>
-            <div class="nav flex-column" style="float:right">
-                <p style="color:white; margin-top:0.5rem; font-size:14px">Email para contato:</p>
-                <a style="color:white; margin-top:-2.5rem; margin-right:1.5rem; font-size:14px">projeto.daft@gmail.com</a>
-            </div>
-            <div class="navbar flex-column" style="margin-top:1.5rem;">
-                <a style="margin-left:-1rem; color: white;">                  
-                   <u>Ajuda</u>                  
-                </a>
-            </div>
-            
-        </div>
-    </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

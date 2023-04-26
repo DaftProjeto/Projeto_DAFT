@@ -2,9 +2,26 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div style="" class="navbar">
-    <div class="card" style="width:80rem; transform:translate(0%, -2%); margin-bottom:2.3rem">        
+<head>
+
+    <link rel="stylesheet" href="/css/Index.css" asp-append-version="true" />
+
+</head>
+
+<div id="IndexTotal" class="navbar">
+    <div class="card" style="width:90%;margin-right:5%;margin-left:5%;">        
         <div class="card-body">
+            <p>
+                <center>
+                    <p id="Atencao"><b><u>Atenção</u><img src="/Imagens/exclamation.png" id="Exclamacao" /></b></p>
+                </center>
+            <p  id="Prazo"><u>Prazo após apresentação:</u></p> 
+
+            <p>
+                Depois de apresentar seu trabalho, o aluno tem 30 dias de prazo para providenciar as correções sugeridas pelos professores aos
+                membros da banca.
+            </p>
+            <br />
             <p class="card-text">                
                 <a style="font-size:20px; color: black; float:left" class="card-text nav-link" type="button" data-bs-toggle="collapse" href="#Hide1" 
                 role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -57,15 +74,7 @@
                 <hr style="" class="border border-dark border-1 opacity-100">
             </div>
             </br>
-            <p>
-               <center> 
-                <p style="font-size:25px"><b><u>Atenção</u></b></p>
-                </center>
-                <p style="font-size:20px"><u>Prazo após apresentação:</u></p>
-
-                <p>Depois de apresentar seu trabalho, o aluno tem 30 dias de prazo para providenciar as correções sugeridas pelos professores aos
-                membros da banca.</p>
-            </p>
+            
         </div>
     </div>
 </div>

@@ -1,0 +1,51 @@
+﻿@media only screen and (min-width: 770px) {
+
+    #IndexTotal {
+        margin-bottom: 10px;
+    }
+
+    #Exclamacao {
+        width: 30px;
+        position: relative;
+        left: 10px;
+    }
+    #Atencao {
+       font-size:25px;
+    }
+
+    #Prazo {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+
+    #Exclamacao {
+        width: 25px;
+        position: relative;
+        left: 10px;
+    }
+
+    #IndexTotal {
+        margin-bottom: 100px;
+    }
+
+    body{
+
+    font-size:15px;
+    }
+
+    #Atencao{
+
+        font-size:20px;
+    }
+
+    #Prazo {
+        font-size:20px;
+    }
+}
+
+html
+{
+    height:100%;
+}
