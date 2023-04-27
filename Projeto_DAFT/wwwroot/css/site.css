@@ -16,3 +16,8 @@ html {
 body {
     padding-bottom:10px;
 }
+
+html, body, #page {
+    height: 100%;
+    
+}

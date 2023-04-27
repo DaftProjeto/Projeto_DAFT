@@ -1,7 +1,31 @@
 ﻿@media only screen and (min-width: 770px) {
 
-    #IndexTotal {
+    #IndexTotal1{
+        padding-left:6.2rem;
+        padding-right:6rem;
+    }
+
+    #IndexTotal2 {
         margin-bottom: 10px;
+        margin-left:6.2rem;
+        float:left;
+        width:44%;
+        padding-top:20px;
+        margin-right:20px;
+        
+    }
+
+    IndexTotal2_Quad {
+        min-height: 100px;
+    }
+
+    #IndexTotal3 {
+        margin-right: 6rem;
+        padding-top: 20px;
+    }
+
+    IndexTotal3_Quad {
+        min-height: 100px;
     }
 
     #Exclamacao {
@@ -42,6 +66,11 @@
 
     #Prazo {
         font-size:20px;
+    }
+
+    #Hide2 {
+        padding-bottom: 200px;
+        
     }
 }
 
