@@ -18,7 +18,7 @@ namespace Projeto_DAFT.Controllers
             return View();
         }
 
-        public IActionResult Gerenciador_Projetos()
+        public IActionResult Gerenciador_Atividades_Curriculares()
         {
             return View();
         }
