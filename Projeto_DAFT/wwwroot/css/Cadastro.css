@@ -6,23 +6,20 @@
         background-color: white;
         border-radius: 10px;
         max-width: 100%;
+        margin:auto;
     }
 
     #AlunIco {
         width: 160px;
         height: 200px;
         position: relative;
-        margin: auto;
         visibility:visible;
-        right:130px;
     }
 
     #OrientadorIco {
         width: 150px;
         height: 150px;
         position: relative;
-        margin: auto;
-        left: 130px;
         visibility: visible;
     }
 
@@ -30,16 +27,55 @@
         color: black;
         text-decoration: none;
         position: relative;
-        right: 150px;
-        bottom:10px;
+        display:block;
+        bottom:20px;
+        left:45px;
     }
 
     #OrientadorText {
         color: black;
         text-decoration: none;
         position: relative;
-        left: 150px;
-        bottom: 10px;
+        display: block;
+        top:5px;
+        left:10px;
+    }
+
+    #AdminIco {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        visibility: visible;
+    }
+
+    #AdminText {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        top: 7px;
+        left:15px;
+    }
+
+    #IcoTextAluno {
+        display: inline-block;
+        padding-left: 20px;
+    }
+
+    #IcoTextOrientador {
+        display: inline-block;
+        position:relative;
+        bottom: 25px;
+        margin:0;   
+        left:70px;
+    }
+
+    #IcoTextAdmin {
+        display: inline-block;
+        position: relative;
+        padding-right: 20px;
+        top:23px;
+        float:right;
     }
 }
 
@@ -47,27 +83,31 @@
     #FundoCad {
         height: 250px;
         position: relative;
-        width: 400px;
+        width: 500px;
         background-color: white;
         border-radius: 10px;
         max-width: 100%;
     }
 
     #AlunIco {
-        width: 150px;
-        height: 140px;
+        width: 110px;
+        height: 150px;
         position: relative;
-        margin: auto;
-        right: 50px;
         visibility: visible;
     }
 
     #OrientadorIco {
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px; 
         position: relative;
-        margin: auto;
-        left: 50px;
+        visibility: visible;
+    }
+
+
+    #AdminIco {
+        width: 100px;
+        height: 100px;
+        position: relative;
         visibility: visible;
     }
 
@@ -75,18 +115,48 @@
         color: black;
         text-decoration: none;
         position: relative;
-        right: 55px;
-        font-size: 15px;
-        bottom: 10px;
+        display: block;
+        bottom: 20px;
+        left: 25px;
     }
 
     #OrientadorText {
         color: black;
         text-decoration: none;
         position: relative;
-        left: 65px;
-        font-size: 15px;
-        bottom: 10px;
+        display: block;
+        top: 5px;
+        left: 0px;
+    }
+
+    #AdminText {
+        color: black;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        top: 7px;
+        right: 10px;
+    }
+
+    #IcoTextAluno {
+        display: inline-block;
+        padding-left: 10px;
+    }
+
+    #IcoTextOrientador {
+        display: inline-block;
+        position: relative;
+        bottom: 25px;
+        margin: 0;
+        left:80px;
+    }
+
+    #IcoTextAdmin {
+        display: inline-block;
+        position: relative;
+        padding-right: 10px;
+        top: 23px;
+        left:15px;
+        float: right;
     }
 }
-
