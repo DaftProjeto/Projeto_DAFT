@@ -1,0 +1,101 @@
+﻿
+#FundoTCCRegras {
+    width:60%;
+    margin:auto;
+    background-color:white;
+    height:520px;
+    border-radius:10px;
+}
+
+#VoltIcoRegras {
+    float:left;
+    width:35px;
+    height:35px;
+}
+
+@media only screen and (max-width: 1110px) {
+    p{
+        font-size:15px;
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+    #VoltIcoRegras{
+    width:33px;
+    height:33px;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+
+    p {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #FundoTCCRegras{
+    height:480px;
+    }
+
+    #VoltIcoRegras {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    p {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #FundoTCCRegras {
+        height: 440px   ;
+    }
+
+    #VoltIcoRegras {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+
+    p {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+
+    p {
+        font-size: 9px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #FundoTCCRegras {
+        height: 420px;
+    }
+
+    #BotProx{
+    top:5px;
+    }
+}
