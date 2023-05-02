@@ -1,0 +1,117 @@
+﻿
+#FundoAnteRegras {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    height: 520px;
+    border-radius: 10px;
+}
+
+#VoltIcoRegras {
+    float: left;
+    width: 35px;
+    height: 35px;
+}
+
+#BotProxAnte {
+    color: white;
+    background-color: black;
+    margin: auto;
+    display: flex;
+    top: 25px;
+    position: relative;
+}
+
+
+
+@media only screen and (max-width: 1010px) {
+
+    p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #FundoAnteRegras {
+        height: 480px;        
+    }
+
+    #VoltIcoRegras {
+        width: 33px;
+        height: 33px;
+    }
+
+    #BotProxAnte{
+        top:6px;
+
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    p {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #FundoAnteRegras {
+        height: 440px;
+        width:75%;
+    }
+
+    #VoltIcoRegras {
+        width: 28px;
+        height: 28px;
+    }
+
+    #BotProxAnte{
+        width:70px;
+        font-size:12px;
+        
+        
+    }
+}
+
+@media only screen and (max-width: 670px) {
+
+    p {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #FundoAnteRegras {
+        height: 440px;
+        width:95%;
+    }
+
+    #BotProxAnte {
+        
+        top: 25px;
+    }
+}
+
+@media only screen and (max-width: 626px){
+
+    #BotProxAnte{
+        top:15px;
+    }
+
+    #FundoAnteRegras{
+        height:420px;
+    }
+}
+
+@media only screen and (max-width: 494px){
+
+    #FundoAnteRegras{
+        height:440px;
+    }
+}

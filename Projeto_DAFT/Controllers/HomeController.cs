@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Projeto_DAFT.Models;
 
 namespace Projeto_DAFT.Controllers
@@ -42,5 +43,6 @@ namespace Projeto_DAFT.Controllers
         {
             return View();
         }
+
     }
 }
