@@ -1,0 +1,16 @@
+﻿#FundoAnteEnviar {
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    height: 520px;
+    border-radius: 10px;
+}
+
+#BotProxAnteEnviar {
+    color: white;
+    background-color: black;
+    margin: auto;
+    display: flex;
+    top: 25px;
+    position: relative;
+}

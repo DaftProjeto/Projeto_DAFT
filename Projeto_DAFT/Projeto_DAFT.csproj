@@ -21,6 +21,7 @@
     <Content Remove="Views\Home\Login.cshtml" />
     <Content Remove="Views\Shared\Layout2.cshtml" />
     <Content Remove="wwwroot\css\.editorconfig" />
+    <Content Remove="wwwroot\css\EnviarTCC.cs" />
   </ItemGroup>
 
   <ItemGroup>

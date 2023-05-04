@@ -1,0 +1,58 @@
+﻿<head>
+
+    <link rel="stylesheet" href="/css/EnviarAnteprojeto.css" asp-append-version="true" />
+
+</head>
+
+<div id="FundoAnteEnviar">
+    <div class="modal-header">
+        <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/Index">
+            <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
+        </a>
+        <h1 style="margin:auto;">Enviar Anteprojeto</h1>
+    </div>
+    <form>
+    <div class="modal-body" style="border:none;">
+        <div class="row">
+            
+            <div class="col">
+                <label for="validationCustom04" class="form-label">Curso</label>
+                
+                <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
+                    <option value="">Agronegócio</option>
+                    <option>Análise e Desenvolvimento de Sistemas</option>
+                    <option>Gestão Empresarial (EaD)</option>
+                    <option>Produção Industrial</option>
+                    <option>Sistemas para Internet</option>                    
+                </select>
+                <div class="invalid-feedback">
+                    Selecione uma opção válida.
+                </div>
+            </div>
+            <div class="col">
+                <label for="validationCustom05" class="form-label">Turno</label>
+                <select class="form-select" id="validationCustom04" required>
+                    <option value="" style="visibility:hidden; display:none;">Selecione o turno...</option>
+                    <option value="">Manhã</option>
+                    <option value="">Tarde</option>
+                    <option value="">Noite</option>                    
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid state.
+                </div>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="">
+    <button id="BotProxAnteEnviar" href="" class="btn" style="" type="submit" >Enviar</button>
+
+   </div>
+   </form>
+</div>
