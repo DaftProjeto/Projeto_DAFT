@@ -6,13 +6,14 @@
 
 <div id="FundoAnteEnviar">
     <div class="modal-header">
-        <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/Index">
+        <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/RegrasAnteprojeto">
             <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
         </a>
         <h1 style="margin:auto;">Enviar Anteprojeto</h1>
     </div>
-    <form>
+  
     <div class="modal-body" style="border:none;">
+          <form>
         <div class="row">
             
             <div class="col">
@@ -26,9 +27,7 @@
                     <option>Produção Industrial</option>
                     <option>Sistemas para Internet</option>                    
                 </select>
-                <div class="invalid-feedback">
-                    Selecione uma opção válida.
-                </div>
+                
             </div>
             <div class="col">
                 <label for="validationCustom05" class="form-label">Turno</label>
@@ -38,21 +37,88 @@
                     <option value="">Tarde</option>
                     <option value="">Noite</option>                    
                 </select>
-                <div class="invalid-feedback">
-                    Please select a valid state.
-                </div>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                
             </div>
 
-        </div>
+                <div class="col">
+                    <label for="validationCustom05" class="form-label">Orientador</label>
+                    <select class="form-select" id="validationCustom04" required>
+                        <option value="" style="visibility:hidden; display:none;">Selecione o Orientador...</option>
+                        <option value="">Carlos</option>
+                        <option value="">Daniela</option>
+                        <option value="">Fernando</option>
+                        </select>
+                </div>
     </div>
 
+            <div class="row" style="position:relative;top:10px;">
+                    
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" name="nome" />
 
-    <div class="">
-    <button id="BotProxAnteEnviar" href="" class="btn" style="" type="submit" >Enviar</button>
+                </div>
+                    <div class="col">
+                        <label for="validationCustom04" class="form-label">Telefone</label>
+                        <input type="number" class="form-control" name="telefone"/>
 
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom04" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email"/>
+
+                    </div>
+            </div>
+
+            <div class="row" style="position:relative;top:20px;">
+
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" name="titulo" />
+
+                </div>
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Observações</label>
+                    <input type="text" class="form-control" name="observações" style="float:right;"/>
+
+                </div>
+
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">RA</label>
+                    <input type="number" class="form-control" name="ra" style="float:right;" />
+</div>
+            </div>
+
+            <div class="row" style="position:relative;top:30px;">
+
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Semestre Atual</label>
+                    <input type="text" class="form-control" name="semestreatual" />
+
+                </div>
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Inicio do Semestre</label>
+                    <input type="date" class="form-control" name="semestreinicio" style="float:right;" />
+
+                </div>
+
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Fim do Semestre</label>
+                    <input type="date" class="form-control" name="semestrefim" style="float:right;" />
+                </div>
+            </div>
+
+            <div class="row" style="position:relative;top:30px;">
+         
+                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                </div>
+
+    <div>
+        <div class="" style="position:relative;top:60px">
+    <button id="BotProxAnteEnviar" href="" class="btn" style="position:relative;" type="submit" >Enviar</button>
+    </div>
    </div>
    </form>
+</div>
+
 </div>
