@@ -1,0 +1,27 @@
+﻿body {
+}
+
+
+
+#FundoTabela {
+    width: 80%;
+    background-color: #212529;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.table {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top:10px;
+ 
+}
+
+#teste {
+    height: 40px;
+    background-color: #212529;
+    border-radius:10px;
+}
