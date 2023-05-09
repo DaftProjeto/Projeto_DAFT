@@ -11,6 +11,38 @@
     background-color: black;
     margin: auto;
     display: flex;
-    top: 25px;
     position: relative;
 }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #0080ff;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color:black;
+}
+
+.custom-file-upload:hover {
+    background-color: #0080ff;
+    color:white;
+}
+
+#name{
+    border:none;
+    border-bottom:solid 1px black;
+    outline:none;
+    width:170px;
+}
+
+@media only screen and (max-width: 1050px) {
+    body {
+        font-size: 13px;
+    }
+
+
+}
+

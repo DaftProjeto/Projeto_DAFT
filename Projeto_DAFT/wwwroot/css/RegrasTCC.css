@@ -3,7 +3,7 @@
     width:60%;
     margin:auto;
     background-color:white;
-    height:520px;
+    height:560px;
     border-radius:10px;
 }
 
@@ -18,7 +18,7 @@
     background-color: black;
     margin: auto;
     display: flex;
-    bottom: 5px;
+    top:5px;
     position: relative;
 }
 

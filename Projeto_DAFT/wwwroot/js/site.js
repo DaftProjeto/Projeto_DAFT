@@ -32,3 +32,12 @@ function showHide() {
         }, false)
     })
 })()
+
+var inputNome = document.getElementById('name');
+var inputFicheiro = document.getElementById('file');
+
+inputFicheiro.addEventListener('change', function () {
+    var nome = this.files[0].name;
+    inputNome.value = nome;
+});
+
