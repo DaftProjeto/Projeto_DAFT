@@ -17,7 +17,7 @@
         background-color: white;
         width: 460px;
         border-radius: 10px;
-        height: 610px;
+        height: 655px;
     }
 
     #OrientadorIcoCad {
@@ -100,6 +100,20 @@
         height: 40px;
         width: 80px
     }
+
+    #SenhaLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #SenhaInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
+    }
 }
 
 
@@ -122,7 +136,7 @@
         background-color: white;
         width: 380px;
         border-radius: 10px;
-        height: 600px;
+        height: 645px;
     }
 
     #OrientadorIcoCad {
@@ -211,5 +225,20 @@
         top: 20px;
         width: 80px;
         height: 40px;
+    }
+
+
+    #SenhaLab {
+        position: relative;
+        float: left;
+        margin-left: 5%;
+    }
+
+    #SenhaInp {
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        bottom: 10px;
     }
 }
