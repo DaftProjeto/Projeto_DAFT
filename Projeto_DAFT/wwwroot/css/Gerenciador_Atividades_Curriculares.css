@@ -25,3 +25,32 @@
     background-color: #212529;
     border-radius:10px;
 }
+
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #0080ff;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: black;
+    top: 20px;
+    position: relative;
+}
+
+    .custom-file-upload:hover {
+        background-color: #0080ff;
+        color: white;
+    }
+
+#name {
+    border: none;
+    border-bottom: solid 1px black;
+    outline: none;
+    width: 170px;
+    top: 20px;
+    position: relative;
+}

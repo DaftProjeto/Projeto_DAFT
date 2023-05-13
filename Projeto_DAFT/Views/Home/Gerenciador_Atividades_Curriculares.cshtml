@@ -1,7 +1,6 @@
 ﻿<head>
 
     <link rel="stylesheet" href="/css/Gerenciador_Atividades_Curriculares.css" asp-append-version="true" />
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
 </head>
 
@@ -21,6 +20,32 @@
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         z-index: 10;
+    }
+
+    #ModalRevisao{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        z-index: 10;
+
+    }
+
+    #FundoModalRevisao{
+        background-color: #fefefe;
+        margin: auto;
+        border: 1px solid #888;
+        height: 450px;
+        width: 500px;
+        z-index: 9999 !important;
+        border-radius: 5px;
     }
 
     #modal-dialog {
@@ -63,10 +88,19 @@
         z-index: auto;
     }
 
+    .botaoImg:hover{
+    background-color:grey;
+        cursor: pointer
+    }
+
 </style>
 
 <div id="FundoTabela">
+    <h1 style="color:white;  text-align: center;">
+        Gerenciamento de Atividades Curriculares
+    </h1>
 <table class="table">
+
     <thead class="table-dark">
         <tr style="border-radius:10px;">
             <th scope="col">Curso</th>
@@ -91,7 +125,11 @@
         <td>Otto</td>
         <td>do</td>
         <td>do</td>
-        <td><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
         <td><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></td>
         <td><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></td>
                 <td>
@@ -125,3 +163,39 @@
              
             </div>
         </div>
+
+
+<div id="ModalRevisao" class="modal" aria-hidden="true" aria-labelledby="ModalRevisao">
+    <div id="FundoModalRevisao">
+        <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Revisão Do Projeto</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <label>Nome do aluno:</label>
+            <input style="display:block;" readonly/>
+
+
+            <label>Curso do aluno:</label>
+            <input style="display:block;" readonly/>
+
+            <label>Tema do aluno:</label>
+            <input style="display:block;" readonly/>
+
+            
+            <label class="custom-file-upload" >
+                <input type="file" id="file" />
+                Adicionar Documento
+            </label>
+            <input type="text" name="name" id="name" class="form-label" readonly>
+        </div>
+
+        <div class="modal-footer" style="position:relative;top:50px;">
+        <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+        </div>
+    </div>
+</div>
+
+

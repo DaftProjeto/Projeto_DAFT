@@ -41,4 +41,3 @@ inputFicheiro.addEventListener('change', function () {
     inputNome.value = nome;
 });
 
-
