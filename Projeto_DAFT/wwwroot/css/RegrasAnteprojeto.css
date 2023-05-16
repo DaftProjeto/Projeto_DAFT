@@ -43,8 +43,15 @@
     }
 
     #BotProxAnte{
-        top:6px;
+        bottom:8px;       
+    }
+}
 
+@media only screen and (max-width: 895px)
+{
+    #FundoAnteRegras {
+        width: 70%;
+        
     }
 }
 
@@ -53,6 +60,7 @@
     p {
         font-size: 14px;
     }
+
 
     h1 {
         font-size: 25px;
@@ -93,14 +101,15 @@
 
     #BotProxAnte {
         
-        top: 25px;
+        top: 5px;
     }
 }
 
 @media only screen and (max-width: 626px){
 
     #BotProxAnte{
-        top:15px;
+        top:-10px;
+        
     }
 
     #FundoAnteRegras{

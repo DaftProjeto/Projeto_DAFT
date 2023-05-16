@@ -13,5 +13,10 @@ namespace Projeto_DAFT.Controllers
         {
             return View();
         }
+
+        public IActionResult EnviarTCCPage2()
+        {
+            return View();
+        }
     }
 }
