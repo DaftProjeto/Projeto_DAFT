@@ -6,93 +6,7 @@
 
 <style>
    
-    /* The Modal (background) */
-    #myModal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        z-index: 10;
-    }
-
-    #ModalRevisao{
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        z-index: 10;
-
-    }
-
-    #FundoModalRevisao{
-        background-color: #fefefe;
-        margin: auto;
-        border: 1px solid #888;
-        height: 450px;
-        width: 500px;
-        z-index: 9999 !important;
-        border-radius: 5px;
-    }
-
-    #modal-dialog {
-        background-color: none;
-        border: none;
-        height: none;
-        z-index: 9999 !important;
-        display:none;
-    }
-
-
-
-    /* Modal Content */
-    #FundoModal {
-        background-color: #fefefe;
-        margin: auto;
-        border: 1px solid #888;
-        height:500px;
-        width:70%;
-        z-index: 9999 !important;
-        border-radius:5px;
-    }
-
-    /* The Close Button */
-    #close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-        #close:hover,
-        #close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-    .modal-backdrop.show {
-        z-index: auto;
-    }
-
-    .botaoImg:hover{
-    background-color:grey;
-        cursor: pointer
-    }
-
+  
 </style>
 
 <div id="FundoTabela">
@@ -130,8 +44,8 @@
                         <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
                         </a>
                 </td>
-        <td><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></td>
-        <td><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
                 <td>
    
                     <a data-target="#myModal" data-toggle="modal">
@@ -198,4 +112,70 @@
     </div>
 </div>
 
+<div id="ModalAgendamento" class="modal" aria-hidden="true" aria-labelledby="ModalAgendamento">
+    <div id="FundoModalAgendamento">
+        <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Agendamento De Defesa</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        
+        <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
+        <p>Disponibilidade do Aluno</p>
+        
 
+
+
+
+        </div>
+        <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
+            <label for="validationCustom05" class="form-label">Data para Defesa</label>
+
+            <input type="date" class="form-select" id="validationCustom04" required style="width:250px;">
+
+         
+
+        </div>
+
+        <div class="modal-footer" style="position:relative;top:200px;width:100%;">
+            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div id="ModalAprovado" class="modal" aria-hidden="true" aria-labelledby="ModalAprovado">
+    <div id="FundoModalAprovado">
+        <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Revisão Do Projeto</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            
+
+
+            <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
+                <label for="validationCustom05" class="form-label">Aprovação</label>
+                <select class="form-select" id="validationCustom04" required style="width:250px;">
+                    <option value="" style="visibility:hidden; display:none;">Selecione o Resultado...</option>
+                    <option value="">Aprovado</option>
+                    <option value="">Reprovado</option>
+                </select>
+
+            </div>
+
+        <div class="modal-footer" style="position:relative;top:50px;">
+            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+        </div>
+    </div>
+</div>
+</div>
