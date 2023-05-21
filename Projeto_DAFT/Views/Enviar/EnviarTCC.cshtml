@@ -20,8 +20,11 @@
         <h1 style="margin:auto;">Enviar Trabalho de Conclusão de Curso</h1>
     </div>
 
-    <div class="modal-body" style="border:none;">
         <form>
+        <div id="form1">
+
+        <div class="modal-body" style="border:none;">
+
             <div class="row">
                 <h5 style="">Dados Academicos</h5>
                 <div class="col">
@@ -119,19 +122,29 @@
                 </div>
             </div>
 
+    </div>
+    </div>
+                <div style="display:none;" id="form2">
+
+                <div class="modal-body" style="border:none;">
+                <label>teste</label>
+                <input />
+
             
+
+                    </div>
+                    </div>
         </form>
 
 
-    </div>
     <div class="modal-footer" style="position:relative;top:70px;">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
              <!--   <li class="page-item">
                     <a class="page-link">Previous</a>
                 </li>-->
-                <li class="page-item"><a class="page-link bg-secondary" href="/Enviar/EnviarTCC" style="color:white;">1</a></li>
-                <li class="page-item"><a class="page-link" href="/Enviar/EnviarTCCPage2" style="color: black;">2</a></li>                
+                <li class="page-item"><a class="page-link bg-secondary" id="1" style="color:white;">1</a></li>
+                <li class="page-item"><a class="page-link" id="2" style="color: black;">2</a></li>                
                 <li class="page-item">
                     <a class="page-link" href="/Enviar/EnviarTCCPage2" style="color: black;">Próximo</a>
                 </li>
@@ -145,3 +158,30 @@
 </div>
 
 <!--<button id="BotProxAnteEnviar" href="" class="btn" type="submit">Enviar</button>-->
+
+<script type="text/javascript">
+
+    const targetDiv2 = document.getElementById("form2");
+    const targetDiv1 = document.getElementById("form1");
+    const btn2 = document.getElementById("2");
+    const btn1 = document.getElementById("1");
+
+    btn2.onclick = function () {
+        if (targetDiv2.style.display !== "block") {
+            targetDiv2.style.display = "block";
+            targetDiv1.style.display = "none";
+
+        }
+        
+
+        
+    };
+
+    btn1.onclick = function () {
+        if (targetDiv1.style.display !== "block") {
+            targetDiv2.style.display = "none";
+            targetDiv1.style.display = "block";
+
+        }
+    };
+</script>
