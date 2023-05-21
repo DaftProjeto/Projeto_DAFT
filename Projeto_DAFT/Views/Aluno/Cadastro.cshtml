@@ -29,7 +29,8 @@
     
     <div id="Telefone">
     <label id="AlunoTeleLab" class="form-label">Telefone*</label>
-    <input type="text" name="" class="form-control" id="TeleInp" required placeholder="9999999999"/>
+    <input type="tel" id="TeleInp" name="phone" class="form-control" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" placeholder="9999999999" required />
+
     </div>
 
     <div id="Email">
@@ -49,7 +50,7 @@
     <input type="text" name="" class="form-control" id="SenhaInp" required/>
     </div>
                 <div id="CheckLabEmail">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                 <label class="form-check-label" for="flexCheckDefault">
                 Autorizo o recebimento de Emails
                 </label>
@@ -57,7 +58,7 @@
             <br />
                 
                 <div id="CheckLabDados">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
                 <label class="form-check-label" for="flexCheckChecked">
                 Autorizo o uso de meus dados
                 </label>
