@@ -49,8 +49,25 @@
         left: 10px;
     }
 
+    #IndexTotal1{
+        margin-left:15px;
+        margin-right:15px;
+    }
+
+    #IndexTotal2 {
+        padding-top: 13px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    #IndexTotal3 {
+        padding-top: 13px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
     #IndexTotal {
-        margin-bottom: 100px;
+        margin-bottom: 300px;
     }
 
     body{
@@ -68,7 +85,7 @@
     }
 
     #Hide2 {
-        padding-bottom: 200px;
+        
         
     }
 

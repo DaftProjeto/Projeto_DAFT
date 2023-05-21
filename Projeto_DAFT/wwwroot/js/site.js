@@ -1,4 +1,7 @@
-﻿const password = document.getElementById('password');
+﻿
+//Função para exibir e esconder a senha do "Modal_Login"
+
+const password = document.getElementById('password');
 const check = document.getElementById('check');
 
 
@@ -11,6 +14,30 @@ function showHide() {
         password.setAttribute('type', 'password');
         check.classList.remove('hide');
     }
+}
+
+//Função para trocar a imagem da "flecha" do dropdown da tela inicial (Anteprojeto)
+
+var ImgFlechaBaixo = "/Imagens/Icon_Flecha.png"
+var ImgFlechaCima = "/Imagens/Icon_Flecha2.png"
+
+function trocar() {
+    document.getElementById("Flecha").src = ImgFlechaBaixo;
+    let aux = ImgFlechaBaixo;
+    ImgFlechaBaixo = ImgFlechaCima;
+    ImgFlechaCima = aux;
+}
+
+//Função para trocar a imagem da "flecha" do dropdown da tela inicial (TCC)
+
+var ImgFlechaBaixo2 = "/Imagens/Icon_Flecha.png"
+var ImgFlechaCima2 = "/Imagens/Icon_Flecha2.png"
+
+function trocar2() {
+    document.getElementById("Flecha2").src = ImgFlechaBaixo2;
+    let aux = ImgFlechaBaixo2;
+    ImgFlechaBaixo2 = ImgFlechaCima2;
+    ImgFlechaCima2 = aux;
 }
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
