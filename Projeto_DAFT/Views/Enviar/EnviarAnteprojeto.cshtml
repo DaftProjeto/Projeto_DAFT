@@ -1,7 +1,7 @@
 ﻿<head>
 
     <link rel="stylesheet" href="/css/EnviarAnteprojeto.css" asp-append-version="true" />
-    
+
 
 </head>
 
@@ -21,34 +21,58 @@
         </a>
         <h1 style="margin:auto;">Enviar Anteprojeto</h1>
     </div>
-  
+
+
+
     <div class="modal-body" style="border:none;">
-          <form>
-        <div class="row">
-            <h5 style="">Dados Academicos</h5>
-            <div class="col">
-                <label for="validationCustom04" class="form-label">Curso</label>
-                
-                <select class="form-select" id="validationCustom04" required>
-                    <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
-                    <option value="">Agronegócio</option>
-                    <option>Análise e Desenvolvimento de Sistemas</option>
-                    <option>Gestão Empresarial (EaD)</option>
-                    <option>Produção Industrial</option>
-                    <option>Sistemas para Internet</option>                    
-                </select>
-                
+        <form>
+            <div class="row" style="position:relative;">
+                <h5 style="">Dados Pessoais</h5>
+
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" name="nome" />
+
+                </div>
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Telefone</label>
+                    <input type="number" class="form-control" name="telefone" />
+
+                </div>
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" placeholder="email@@.com" />
+
+                </div>
             </div>
-            <div class="col">
-                <label for="validationCustom05" class="form-label">Turno</label>
-                <select class="form-select" id="validationCustom04" required>
-                    <option value="" style="visibility:hidden; display:none;">Selecione o turno...</option>
-                    <option value="">Manhã</option>
-                    <option value="">Tarde</option>
-                    <option value="">Noite</option>                    
-                </select>
-                
-            </div>
+
+
+
+            <div class="row">
+                <h5 style="margin-top:20px;">Dados Academicos</h5>
+                <div class="col">
+                    <label for="validationCustom04" class="form-label">Curso</label>
+
+                    <select class="form-select" id="validationCustom04" required>
+                        <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
+                        <option value="">Agronegócio</option>
+                        <option>Análise e Desenvolvimento de Sistemas</option>
+                        <option>Gestão Empresarial (EaD)</option>
+                        <option>Produção Industrial</option>
+                        <option>Sistemas para Internet</option>
+                    </select>
+
+                </div>
+                <div class="col">
+                    <label for="validationCustom05" class="form-label">Turno</label>
+                    <select class="form-select" id="validationCustom04" required>
+                        <option value="" style="visibility:hidden; display:none;">Selecione o turno...</option>
+                        <option value="">Manhã</option>
+                        <option value="">Tarde</option>
+                        <option value="">Noite</option>
+                    </select>
+
+                </div>
 
                 <div class="col">
                     <label for="validationCustom05" class="form-label">Orientador</label>
@@ -57,9 +81,9 @@
                         <option value="">Carlos</option>
                         <option value="">Daniela</option>
                         <option value="">Fernando</option>
-                        </select>
+                    </select>
                 </div>
-    </div>
+            </div>
 
 
             <div class="row" style="position:relative;top:10px;">
@@ -71,14 +95,14 @@
                 </div>
                 <div class="col">
                     <label for="validationCustom04" class="form-label">Observações</label>
-                    <input type="text" class="form-control" name="observações" style="float:right;"/>
+                    <input type="text" class="form-control" name="observações" style="float:right;" />
 
                 </div>
 
                 <div class="col">
                     <label for="validationCustom04" class="form-label">RA</label>
                     <input type="number" class="form-control" name="ra" style="float:right;" />
-</div>
+                </div>
             </div>
 
             <div class="row" style="position:relative;top:20px;">
@@ -100,48 +124,26 @@
                 </div>
             </div>
 
+            <div class="row" style="position:relative; top:40px; margin-bottom:10px">
+                <label for="validationCustom04" class="form-label">Enviar Documento</label>
+                <div class="col input-group" style="">
+                    <label class="btn" id="Enviar_Arquivo" style="">
+                        <input type="file" id="file" />
+                        Adicionar Documento
+                    </label>
+                    <input style="box-shadow:none;" type="text" name="name" id="name" class="form-control border-1 bg-white" readonly>
 
-            <div class="row" style="position:relative;top:30px;">
-                <h5 style="">Dados Pessoais</h5>
-
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" name="nome" />
-
-                </div>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" name="telefone" />
-
-                </div>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="email@@.com"/>
 
                 </div>
             </div>
-
-            <div class="row" style="position:relative;top:50px;">
-                <div class="col">
-                <label class="custom-file-upload">
-                    <input type="file" id="file" />
-                    Adicionar Documento
-                </label>
-                <input type="text" name="name" id="name"  class="form-label" readonly> 
-                  
-
-            </div>
-            </div>
-
-            
 
         </form>
 
-       
-</div>
-    <div class="modal-footer" style="position:relative;top:70px;">
-        
-        <button id="BotProxAnteEnviar" href="" class="btn" type="submit">Enviar</button>
+
+    </div>
+    <div class="modal-footer" style="position:relative;top:50px;">
+
+        <button style="box-shadow:none;" id="BotProxAnteEnviar" href="" class="btn" type="submit">Enviar</button>
 
     </div>
 

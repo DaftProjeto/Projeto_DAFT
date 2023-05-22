@@ -17,7 +17,7 @@
         <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/RegrasTCC">
             <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
         </a>
-        <h1 style="margin:auto;">Enviar Trabalho de Conclusão de Curso</h1>
+        <h1 style="margin:auto; font-size:35px;">Enviar Trabalho de Conclusão de Curso</h1>
     </div>
 
         <form>
@@ -25,8 +25,28 @@
 
         <div class="modal-body" style="border:none;">
 
+                <div class="row" style="position:relative;">
+                    <h5 style="">Dados Pessoais</h5>
+
+                    <div class="col">
+                        <label for="validationCustom04" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" name="nome" />
+
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom04" class="form-label">Telefone</label>
+                        <input type="number" class="form-control" name="telefone" />
+
+                    </div>
+                    <div class="col">
+                        <label for="validationCustom04" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" />
+
+                    </div>
+                </div>
+            
             <div class="row">
-                <h5 style="">Dados Academicos</h5>
+                <h5 style="margin-top:20px;">Dados Academicos</h5>
                 <div class="col">
                     <label for="validationCustom04" class="form-label">Curso</label>
 
@@ -99,28 +119,7 @@
                     <label for="validationCustom04" class="form-label">Fim do Semestre</label>
                     <input type="date" class="form-control" name="semestrefim" style="float:right;" />
                 </div>
-            </div>
-
-
-            <div class="row" style="position:relative;top:30px;">
-                <h5 style="">Dados Pessoais</h5>
-
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" name="nome" />
-
-                </div>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" name="telefone" />
-
-                </div>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="email" />
-
-                </div>
-            </div>
+            </div>            
 
     </div>
     </div>
@@ -139,12 +138,9 @@
 
     <div class="modal-footer" style="position:relative;top:70px;">
         <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
-             <!--   <li class="page-item">
-                    <a class="page-link">Previous</a>
-                </li>-->
-                <li class="page-item"><a class="page-link bg-secondary" id="1" style="color:white;">1</a></li>
-                <li class="page-item"><a class="page-link" id="2" style="color: black;">2</a></li>                
+            <ul class="pagination justify-content-end">             
+                <li class="page-item"><a class="page-link bg-secondary" id="1" style="color:white; cursor:pointer;">1</a></li>
+                <li class="page-item"><a class="page-link" id="2" style="color: black; cursor:pointer;">2</a></li>                
                 <li class="page-item">
                     <a class="page-link" href="/Enviar/EnviarTCCPage2" style="color: black;">Próximo</a>
                 </li>

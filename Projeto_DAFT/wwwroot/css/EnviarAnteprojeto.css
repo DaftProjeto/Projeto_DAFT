@@ -23,26 +23,72 @@ input[type="file"] {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    color:black;
+    color: black;
 }
 
-.custom-file-upload:hover {
-    background-color: #0080ff;
-    color:white;
+    .custom-file-upload:hover {
+        background-color: #0080ff;
+        color: white;
+    }
+
+#name {
 }
 
-#name{
-    border:none;
-    border-bottom:solid 1px black;
-    outline:none;
-    width:170px;
+#Enviar_Arquivo:hover {
+    background-color: #565656;
+    color: white;
 }
 
-@media only screen and (max-width: 1050px) {
+#Enviar_Arquivo {
+    border: 1px solid #80808060;
+    background-color: gray;
+    color: white;
+}
+
+@media only screen and (min-width: 1011px) {
+
+    #FundoAnteEnviar {
+        height: 670px;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
     body {
         font-size: 13px;
     }
-
-
 }
 
+@media only screen and (max-width: 820px) {
+
+    #FundoAnteEnviar {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    #FundoAnteEnviar {
+        height: 590px;
+    }
+}
+
+@media only screen and (max-width: 670px) {
+
+    #FundoAnteEnviar {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 467px) {
+
+    #FundoAnteEnviar {
+        height: 600px;
+    }
+}
+
+@media only screen and (max-width: 432px) {
+
+    #FundoAnteEnviar {
+        height: 645px;
+    }
+}
