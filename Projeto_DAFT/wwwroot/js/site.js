@@ -107,15 +107,18 @@ function enviarApro() {
 
     if (InpApro == 1) {
         document.getElementById("imgapro").src = "/Imagens/correto.png";
-        document.getElementById("ModalAprovado").style.display = "none";
-    }
+        BotApro.setAttribute("data-dismiss", "modal");
+        }
 
     else if (InpApro == 2) {
         document.getElementById("imgapro").src = "/Imagens/incorreto.png";
-        document.getElementById("ModalAprovado").style.display = "none";
+        BotApro.setAttribute("data-dismiss", "modal");
+
     }
     else if (InpApro == 3) {
-        naoSelecionado.innerHTML = `<p id="">AAAAAA</p>`
+        naoSelecionado.innerHTML = `<p style="">AAAAAA</p>`
+        BotApro.removeAttribute("data-dismiss", "modal");
+
     }
 }
 

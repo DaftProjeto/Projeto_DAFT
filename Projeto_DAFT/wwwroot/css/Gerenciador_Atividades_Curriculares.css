@@ -80,7 +80,6 @@
 
 .modal-backdrop.show {
     z-index: auto;
-    display:none;
 }
 
 .botaoImg:hover {
@@ -119,8 +118,8 @@
     background-color: #fefefe;
     margin:  auto;
     border: 1px solid #888;
-    height: 300px;
-    width: 600px;
+    height: 350px;
+    width: 500px;
     z-index: 9999 !important;
     border-radius: 5px;
 
