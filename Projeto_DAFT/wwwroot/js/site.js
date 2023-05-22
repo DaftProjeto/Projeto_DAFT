@@ -92,3 +92,66 @@ inputFicheiro.addEventListener('change', function () {
     return r;
         }
 
+
+
+const BotApro = document.getElementById('BotApro')
+
+BotApro.addEventListener('click', () => {
+    enviarApro()
+
+})
+
+function enviarApro() {
+    const InpApro = document.getElementById('InpApro').value
+    const naoSelecionado = document.getElementById('naoSelecionado')
+
+    if (InpApro == 1) {
+        document.getElementById("imgapro").src = "/Imagens/correto.png";
+        document.getElementById("ModalAprovado").style.display = "none";
+    }
+
+    else if (InpApro == 2) {
+        document.getElementById("imgapro").src = "/Imagens/incorreto.png";
+        document.getElementById("ModalAprovado").style.display = "none";
+    }
+    else if (InpApro == 3) {
+        naoSelecionado.innerHTML = `<p id="">AAAAAA</p>`
+    }
+}
+
+
+function Apro() {
+    const InpApro = document.getElementById('InpApro').value
+    const naoSelecionado = document.getElementById('naoSelecionado')
+
+    if (InpApro == 1) {
+        document.getElementById("imgapro").src = "/Imagens/correto.png";
+        
+    }
+
+    else if (InpApro == 2) {
+        document.getElementById("imgapro").src = "/Imagens/incorreto.png";
+
+    }
+    else if (InpApro == 3) {
+        console.log('a')
+    }
+}
+
+
+
+function AgendDef() {
+    const DefInp = document.getElementById('DefInp').value
+
+    if (DefInp >= 1) {
+        document.getElementById("imgapro").src = "/Imagens/correto.png";
+    }
+
+    else if (DefInp == 2) {
+        document.getElementById("imgapro").src = "/Imagens/incorreto.png";
+
+    }
+    else if (DefInp == 3) {
+        alert('Não da pra selecionar o 3')
+    }
+}

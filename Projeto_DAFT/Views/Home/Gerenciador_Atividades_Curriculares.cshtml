@@ -47,7 +47,7 @@
                         </a>
                 </td>
         <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
-        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
                 <td>
    
                     <a data-target="#myModal" data-toggle="modal">
@@ -122,7 +122,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        
+        <form>
         <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
         <p>Disponibilidade do Aluno</p>
         
@@ -134,15 +134,16 @@
         <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
             <label for="validationCustom05" class="form-label">Data para Defesa</label>
 
-            <input type="date" class="form-select" id="validationCustom04" required style="width:250px;">
+            <input type="date" class="form-select" id="DefInp" style="width:250px;" required>
 
          
 
         </div>
 
         <div class="modal-footer" style="position:relative;top:200px;width:100%;">
-            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+            <button class="btn" style="margin:auto;background-color:black;color:white;" type="submit">Enviar</button>
         </div>
+        </form>
     </div>
 </div>
 
@@ -156,28 +157,31 @@
 <div id="ModalAprovado" class="modal" aria-hidden="true" aria-labelledby="ModalAprovado">
     <div id="FundoModalAprovado">
         <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Revisão Do Projeto</h1>
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Estado do Aluno</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
-            
-
-
-            <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
-                <label for="validationCustom05" class="form-label">Aprovação</label>
-                <select class="form-select" id="validationCustom04" required style="width:250px;">
-                    <option value="" style="visibility:hidden; display:none;">Selecione o Resultado...</option>
-                    <option value="">Aprovado</option>
-                    <option value="">Reprovado</option>
+            <div style="">
+                <label for="validationCustom05" class="form-label">Resultado</label>
+                <select  class="form-select" id="InpApro" required style="width:250px;">
+                    <option value="3" style="visibility:hidden; display:none;">Selecione o Resultado...</option>
+                    <option value="1">Aprovado</option>
+                    <option value="2">Reprovado</option>
                 </select>
+
+
+                <p id="naoSelecionado"></p>
 
             </div>
 
         <div class="modal-footer" style="position:relative;top:50px;">
-            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+                <button class="btn" id="BotApro" style="margin:auto;background-color:black;color:white;" type="submit">Enviar</button>
         </div>
     </div>
 </div>
 </div>
+
+
+
