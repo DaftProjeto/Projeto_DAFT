@@ -138,11 +138,17 @@
 
     <div class="modal-footer" style="position:relative;top:70px;">
         <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">             
-                <li class="page-item"><a class="page-link bg-secondary" id="1" style="color:white; cursor:pointer;">1</a></li>
-                <li class="page-item"><a class="page-link" id="2" style="color: black; cursor:pointer;">2</a></li>                
+            <ul class="pagination justify-content-end">
+                <a class="page-link" style="color:black;display:none;cursor:pointer;" id="3">Anterior</a>
+
                 <li class="page-item">
-                    <a class="page-link" href="/Enviar/EnviarTCCPage2" style="color: black;">Próximo</a>
+                    <a class="page-link" id="1" style="cursor:pointer;color:white !important;background-color: #a0a0a0 !important;">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" id="2" style=" cursor:pointer;color:black !important;background-color: white !important;">2</a></li>
+                <li class="page-item">
+
+                    <a class="page-link" style="color: black;cursor:pointer;" id="4">Próximo</a>
+
                 </li>
             </ul>
         </nav>
@@ -161,11 +167,21 @@
     const targetDiv1 = document.getElementById("form1");
     const btn2 = document.getElementById("2");
     const btn1 = document.getElementById("1");
+    const btn3 = document.getElementById("3");
+    const btn4 = document.getElementById("4");
+
+
 
     btn2.onclick = function () {
         if (targetDiv2.style.display !== "block") {
             targetDiv2.style.display = "block";
             targetDiv1.style.display = "none";
+            btn4.style.display = "none";
+            btn3.style.display = "block";
+            btn2.style.color = "white"; 
+            btn2.style.backgroundColor = "#a0a0a0";
+            btn1.style.color = "black"; 
+            btn1.style.backgroundColor = "white";
 
         }
         
@@ -177,7 +193,41 @@
         if (targetDiv1.style.display !== "block") {
             targetDiv2.style.display = "none";
             targetDiv1.style.display = "block";
+            btn4.style.display = "block";
+            btn3.style.display = "none";
+            btn2.style.color = "black";
+            btn2.style.backgroundColor = "white";
+            btn1.style.color = "white";
+            btn1.style.backgroundColor = "#a0a0a0";
 
+        }
+    };
+
+    btn3.onclick = function () {
+        if (targetDiv2.style.display !== "none") {
+            targetDiv2.style.display = "none";
+            targetDiv1.style.display = "block";
+            btn4.style.display = "block";
+            btn3.style.display = "none";
+            btn2.style.color = "black";
+            btn2.style.backgroundColor = "white";
+            btn1.style.color = "white";
+            btn1.style.backgroundColor = "#a0a0a0";
+
+        }
+    };
+
+    btn4.onclick = function () {   //Btn4 = Proximo
+        if (targetDiv1.style.display !== "none") {
+            targetDiv2.style.display = "block";
+            targetDiv1.style.display = "none";
+            btn4.style.display = "none";
+            btn3.style.display = "block";
+            btn2.style.color = "white";
+            btn2.style.backgroundColor = "#a0a0a0";
+            btn1.style.color = "black";
+            btn1.style.backgroundColor = "white";
+    
         }
     };
 </script>
