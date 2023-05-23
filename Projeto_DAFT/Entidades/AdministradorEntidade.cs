@@ -1,8 +1,8 @@
 ﻿namespace Projeto_DAFT.Entidades
 {
-    public class AdministradorEntidade
+    public class AdministradorEntidade : UsuarioEntidade
     {
-
-        public int ID_Adminstrador
+        public int ID { get; set; }
+        public UsuarioEntidade ID_Usuario { get; set; }
     }
 }

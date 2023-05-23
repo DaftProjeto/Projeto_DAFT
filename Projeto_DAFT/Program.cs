@@ -1,4 +1,5 @@
 using Projeto_DAFT;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
