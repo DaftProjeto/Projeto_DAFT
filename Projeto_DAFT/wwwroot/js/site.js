@@ -94,7 +94,7 @@ inputFicheiro.addEventListener('change', function () {
 
 
 
-const BotApro = document.getElementById('BotApro')
+const BotApro = document.getElementById('BotApro');
 
 BotApro.addEventListener('click', () => {
     enviarApro()
@@ -123,38 +123,34 @@ function enviarApro() {
 }
 
 
-function Apro() {
-    const InpApro = document.getElementById('InpApro').value
-    const naoSelecionado = document.getElementById('naoSelecionado')
+DefInp.addEventListener("click", () => {
+    datacorreta();
 
-    if (InpApro == 1) {
-        document.getElementById("imgapro").src = "/Imagens/correto.png";
-        
+})
+
+
+function datacorreta() {
+    var DefInp = document.getElementById("DefInp").value;
+    var dateEntered = new Date(DefInp);
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = dd +mm+ yyyy;
+
+
+    if (dateEntered >= today) {
+        document.getElementById('AgendDefBot').style.display = "block";
+        document.getElementById('EnviarA').style.display = "none";
+        document.getElementById("imgagend").src = "/Imagens/correto.png";
+    }
+    else if (dateEntered <= today){
+        document.getElementById('AgendDefBot').style.display = "none";
+        document.getElementById('EnviarA').style.display = "block";
     }
 
-    else if (InpApro == 2) {
-        document.getElementById("imgapro").src = "/Imagens/incorreto.png";
-
-    }
-    else if (InpApro == 3) {
-        console.log('a')
-    }
 }
 
 
-
-function AgendDef() {
-    const DefInp = document.getElementById('DefInp').value
-
-    if (DefInp >= 1) {
-        document.getElementById("imgapro").src = "/Imagens/correto.png";
-    }
-
-    else if (DefInp == 2) {
-        document.getElementById("imgapro").src = "/Imagens/incorreto.png";
-
-    }
-    else if (DefInp == 3) {
-        alert('Não da pra selecionar o 3')
-    }
-}
