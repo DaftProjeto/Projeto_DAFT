@@ -7,8 +7,6 @@
 
 }
 
-
-
 #FundoTCCEnviar2 {
     width: 60%;
     margin: auto;
@@ -49,8 +47,52 @@ input[type="file"] {
     width: 170px;
 }
 
+.GroupCheck {
+    display: flex;
+    align-items:center;
+}
+
+.GroupCheck label{
+    padding-left:10px;
+    
+}
+
+.radio {
+    appearance: none;
+    /*background: #00648C;*/
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #00648C;
+    position: relative;
+    align-items:center;
+    display:flex;
+    justify-content: center;
+}
+
+    .radio:before {
+        content:'';
+        position: absolute;
+        height: 10px;
+        width: 10px;
+        background: #00648C;
+        border-radius:50%;
+        opacity:0;
+    }
+
+    .radio:checked:before{
+       opacity: 0;
+    }
+    
+    .radio:checked:before{
+        opacity: 1;
+    }
+
 @media only screen and (max-width: 1050px) {
     body {
         font-size: 13px;
     }
 }
+
+

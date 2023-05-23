@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Enviar\EnviarTCCPage2.cshtml" />
     <Content Remove="Views\Home\Login.cshtml" />
     <Content Remove="Views\Shared\Layout2.cshtml" />
     <Content Remove="wwwroot\css\.editorconfig" />
