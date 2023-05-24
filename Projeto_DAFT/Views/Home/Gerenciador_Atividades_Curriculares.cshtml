@@ -171,26 +171,44 @@
         </div>
         <form>
         <div class="modal-body">
+
+                <div style="display:inline-block;margin-top:5px;margin-right:20px;">
+
                 <label for="validationCustom05" class="form-label">Resultado</label>
                 <select  class="form-select" id="InpApro" required style="width:250px;">
                     <option value="3" style="display:none; ">Selecione o Resultado...</option>
                     <option value="1">Aprovado</option>
                     <option value="2">Reprovado</option>
                 </select>
-
+                </div>
 
                 <p id="naoSelecionado"></p>
 
 
+                <div class="modal-footer" style="position:absolute;width:480px;top:185px;">
+                    <button class="btn close" id="BotApro" style="margin:auto;background-color:black;color:white;position:relative;right:8px;" type="button">Enviar</button>
+                </div>
             </div>
 
-        <div class="modal-footer" style="position:relative;top:50px;">
-                <button class="btn close" id="BotApro" style="margin:auto;background-color:black;color:white;"  type="button">Enviar</button>
-        </div>
     </form>
 </div>
 </div>
 
 <script type="text/javascript">
-   
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DefInp").setAttribute("min", today);
 </script>
+

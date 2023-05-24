@@ -196,11 +196,11 @@ input[type="file"] {
 #ErroData {
     color: red;
     background-color: #cddeee;
-    width: 275px;
+    width: 250px;
     border-radius: 3px;
     position: relative;
     height: 40px;
-    left: 280px;
+    left: 292px;
     animation-name: DataNãoPossivel;
     animation-duration: 6s;
     opacity: 0;
@@ -212,7 +212,8 @@ input[type="file"] {
     height:25px;
     display:inline-block;
     position:relative;
-    top:7px;
+    top:5px;
+    left:5px;
 }
 
 #testeteste{
@@ -238,5 +239,55 @@ input[type="file"] {
         top: 80%;
         opacity: 0;
         top: 25px;
+    }
+}
+
+#ErroEsta {
+    color: red;
+    background-color: #cddeee;
+    border-radius: 3px;
+    position: relative;
+    height: 30px;
+    right: 4px;
+    animation-name: OpInvalidaEsta;
+    animation-duration: 6s;
+    opacity: 0;
+    
+}
+
+#naoSelecionado {
+    display: inline-block;
+    top: 2px;
+    position: relative;
+    left: 4px;
+}
+
+#ImgErroEst {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: 5px;
+}
+
+@keyframes OpInvalidaEsta {
+    0% {
+        top: 5px;
+        width: 250px;
+    }
+
+    50% {
+        top: 80%;
+        opacity: 1;
+        top: 5px;
+        width: 250px;
+    }
+
+    100% {
+        top: 80%;
+        opacity: 0;
+        top: 5px;
+        width: 250px;
     }
 }

@@ -96,17 +96,17 @@ inputFicheiro.addEventListener('change', function () {
 
 const BotApro = document.getElementById('BotApro');
 const BotaoAgend = document.getElementById('BotaoAgend');
-const date = new Date();
+var date = new Date();
 
 let AprovaAgend = 0;
 
-InpApro.addEventListener('change', () => {
+InpApro.addEventListener('input', () => {
     TrocaBotApro()
 
 })
 
 function TrocaBotApro() {
-    const InpApro = document.getElementById('InpApro').value
+    const InpApro = document.getElementById('InpApro').value;
 
     if (InpApro == 1) {
         BotApro.setAttribute("data-dismiss", "modal");
@@ -138,14 +138,17 @@ function EstadoApro() {
 
     if (InpApro == 1) {
         document.getElementById("imgapro").src = "/Imagens/correto.png";
+        naoSelecionado.innerHTML = ``
+
     }
 
     else if (InpApro == 2) {
         document.getElementById("imgapro").src = "/Imagens/incorreto.png";
+        naoSelecionado.innerHTML = ``
 
     }
     else {
-        naoSelecionado.innerHTML = `<p style="">AAAAAA</p>`
+        naoSelecionado.innerHTML = `<div id="ErroEsta"><p id="naoSelecionado">Selecione uma opção Valida</p> <img id="ImgErroEst"src="/Imagens/Aguardando icon.png"> </div>`
 
     }
 }
@@ -167,23 +170,24 @@ function Datacorreta() {
 
     var datadigitada = dia+'-'+mes+'-'+ano;
 
+
     var diaat = agora.getUTCDate();
     var mesat = agora.getUTCMonth() + 1;
     var anoat = agora.getUTCFullYear();
 
-    var dataatual = diaat+'-'+ mesat+'-'+anoat;
+    
 
+    var dataatual = diaat +'-'+ mesat+'-'+anoat;
 
     if (DefInp >= agora) {
        
-                BotaoAgend.setAttribute("data-dismiss", "modal");
-                BotaoAgend.setAttribute("type", "submit");
-
+        BotaoAgend.setAttribute("data-dismiss", "modal");
+        BotaoAgend.setAttribute("type", "submit");
        
     } else {
         BotaoAgend.setAttribute("type", "button");
         BotaoAgend.removeAttribute("data-dismiss", "modal");
-
+        
     }
 
     
@@ -208,7 +212,7 @@ function EnviarAgend() {
     else {
         document.getElementById("imgagen").src = "/Imagens/Aguardando icon.png";
         document.getElementById("BotaoAgend").removeAttribute("data - dismiss", "modal");
-        naoSelecionado.innerHTML = `<div id="ErroData"><p id="testeteste">Selecione a data atual ou superior</p> <img id="ImgDataErro"src="/Imagens/Aguardando icon.png"> </div>`
+        naoSelecionado.innerHTML = `<div id="ErroData"><p id="testeteste">Selecione uma data superior</p> <img id="ImgDataErro"src="/Imagens/Aguardando icon.png"> </div>`
 
     }
 }
