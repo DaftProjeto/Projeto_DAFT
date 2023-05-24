@@ -202,12 +202,13 @@ function EnviarAgend() {
 
     if (BotaoAgend.type == 'submit') {
         document.getElementById("imgagen").src = "/Imagens/correto.png";
+        naoSelecionado.innerHTML = ``
 
     }
-    else if (BotaoAgend.type == 'button') {
+    else {
         document.getElementById("imgagen").src = "/Imagens/Aguardando icon.png";
         document.getElementById("BotaoAgend").removeAttribute("data - dismiss", "modal");
-        naoSelecionado.innerHTML = `<p style="">Selecione a data atual ou superior!</p>`
+        naoSelecionado.innerHTML = `<div id="ErroData"><p id="testeteste">Selecione a data atual ou superior</p> <img id="ImgDataErro"src="/Imagens/Aguardando icon.png"> </div>`
 
     }
 }

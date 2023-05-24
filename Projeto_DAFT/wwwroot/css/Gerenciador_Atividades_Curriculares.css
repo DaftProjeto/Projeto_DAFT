@@ -192,3 +192,51 @@ input[type="file"] {
     top: 20px;
     position: relative;
 }
+
+#ErroData {
+    color: red;
+    background-color: #cddeee;
+    width: 275px;
+    border-radius: 3px;
+    position: relative;
+    height: 40px;
+    left: 280px;
+    animation-name: DataNãoPossivel;
+    animation-duration: 6s;
+    opacity: 0;
+}
+
+#ImgDataErro{
+
+    width:25px;
+    height:25px;
+    display:inline-block;
+    position:relative;
+    top:7px;
+}
+
+#testeteste{
+    display:inline-block;
+    top:10px;
+    position:relative;
+    left:4px;
+}
+
+@keyframes DataNãoPossivel {
+
+    0% {
+        top: 25px;
+    }
+
+    50% {
+        top: 80%;
+        opacity: 1;
+        top: 25px;
+    }
+
+    100% {
+        top: 80%;
+        opacity: 0;
+        top: 25px;
+    }
+}
