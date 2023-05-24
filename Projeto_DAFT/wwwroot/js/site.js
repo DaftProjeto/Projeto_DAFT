@@ -95,62 +95,119 @@ inputFicheiro.addEventListener('change', function () {
 
 
 const BotApro = document.getElementById('BotApro');
+const BotaoAgend = document.getElementById('BotaoAgend');
+const date = new Date();
 
-BotApro.addEventListener('click', () => {
-    enviarApro()
+let AprovaAgend = 0;
+
+InpApro.addEventListener('change', () => {
+    TrocaBotApro()
 
 })
 
-function enviarApro() {
+function TrocaBotApro() {
+    const InpApro = document.getElementById('InpApro').value
+
+    if (InpApro == 1) {
+        BotApro.setAttribute("data-dismiss", "modal");
+        BotApro.setAttribute("type", "submit");
+        }
+
+    else if (InpApro == 2) {
+        BotApro.setAttribute("data-dismiss", "modal");
+        BotApro.setAttribute("type", "submit");
+
+
+    }
+    else if (InpApro == 3) {
+        BotApro.removeAttribute("data-dismiss", "modal");
+        BotApro.removeAttribute("type", "submit");
+
+
+    }
+}
+
+BotApro.addEventListener('click', () => {
+    EstadoApro()
+
+})
+
+function EstadoApro() {
     const InpApro = document.getElementById('InpApro').value
     const naoSelecionado = document.getElementById('naoSelecionado')
 
     if (InpApro == 1) {
         document.getElementById("imgapro").src = "/Imagens/correto.png";
-        BotApro.setAttribute("data-dismiss", "modal");
-        }
+    }
 
     else if (InpApro == 2) {
         document.getElementById("imgapro").src = "/Imagens/incorreto.png";
-        BotApro.setAttribute("data-dismiss", "modal");
 
     }
-    else if (InpApro == 3) {
+    else {
         naoSelecionado.innerHTML = `<p style="">AAAAAA</p>`
-        BotApro.removeAttribute("data-dismiss", "modal");
 
     }
 }
 
 
-DefInp.addEventListener("click", () => {
-    datacorreta();
 
+DefInp.addEventListener("change",() => {
+
+    Datacorreta()
 })
 
+function Datacorreta() {
+    var DefInp = document.getElementById('DefInp').valueAsDate;
+    var agora = new Date();
 
-function datacorreta() {
-    var DefInp = document.getElementById("DefInp").value;
-    var dateEntered = new Date(DefInp);
+    var dia = DefInp.getUTCDate();
+    var mes = DefInp.getUTCMonth() + 1;
+    var ano = DefInp.getUTCFullYear();
 
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
+    var datadigitada = dia+'-'+mes+'-'+ano;
 
-    today = dd +mm+ yyyy;
+    var diaat = agora.getUTCDate();
+    var mesat = agora.getUTCMonth() + 1;
+    var anoat = agora.getUTCFullYear();
+
+    var dataatual = diaat+'-'+ mesat+'-'+anoat;
 
 
-    if (dateEntered >= today) {
-        document.getElementById('AgendDefBot').style.display = "block";
-        document.getElementById('EnviarA').style.display = "none";
-        document.getElementById("imgagend").src = "/Imagens/correto.png";
+    if (DefInp >= agora) {
+       
+                BotaoAgend.setAttribute("data-dismiss", "modal");
+                BotaoAgend.setAttribute("type", "submit");
+
+       
+    } else {
+        BotaoAgend.setAttribute("type", "button");
+        BotaoAgend.removeAttribute("data-dismiss", "modal");
+
     }
-    else if (dateEntered <= today){
-        document.getElementById('AgendDefBot').style.display = "none";
-        document.getElementById('EnviarA').style.display = "block";
-    }
 
+    
+
+    
 }
 
 
+BotaoAgend.addEventListener("click", () => {
+
+    EnviarAgend()
+})
+
+function EnviarAgend() {
+    const naoSelecionado = document.getElementById('testeteste')
+
+    if (BotaoAgend.type == 'submit') {
+        document.getElementById("imgagen").src = "/Imagens/correto.png";
+
+    }
+    else if (BotaoAgend.type == 'button') {
+        document.getElementById("imgagen").src = "/Imagens/Aguardando icon.png";
+        document.getElementById("BotaoAgend").removeAttribute("data - dismiss", "modal");
+        naoSelecionado.innerHTML = `<p style="">Selecione a data atual ou superior!</p>`
+
+    }
+}

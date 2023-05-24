@@ -46,7 +46,7 @@
                         <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
                         </a>
                 </td>
-        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagend"/></a></td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
         <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
                 <td>
    
@@ -89,6 +89,7 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+       <form>
         <div class="modal-body">
             <label>Nome do aluno:</label>
             <input style="display:block;" readonly/>
@@ -102,15 +103,16 @@
 
             
             <label class="custom-file-upload" >
-                <input type="file" id="file" />
+                <input type="file" id="file" class="testeinp"/>
                 Adicionar Documento
             </label>
             <input type="text" name="name" id="name" class="form-label" readonly>
         </div>
 
         <div class="modal-footer" style="position:relative;top:50px;">
-        <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
+        <button class="btn" style="margin:auto;background-color:black;color:white;" type="button" id="EnviarDocRev">Enviar</button>
         </div>
+        </form>
     </div>
 </div>
 
@@ -123,7 +125,9 @@
             </button>
         </div>
         <form>
-        <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
+            <div class="modal-body">
+                <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
+
         <p>Disponibilidade do Aluno</p>
         
 
@@ -134,15 +138,15 @@
         <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
             <label for="validationCustom05" class="form-label">Data para Defesa</label>
 
-            <input type="date" class="form-select" id="DefInp" style="width:250px;">
+            <input type="date" class="form-select" id="DefInp" style="width:250px;" required>
 
-         
+         <p id="testeteste"></p>
 
         </div>
         <div class="modal-footer" style="position:relative;top:200px;width:100%;">
-        <a class="btn"style="margin:auto;background-color:black;color:white;" id="EnviarA">Enviar</a>
-        <button class="btn" style="margin:auto;background-color:black;color:white;display:none;" type="submit" id="AgendDefBot">Enviar</button>
-        </div>
+                <button class="btn close" id="BotaoAgend" style="margin:auto;background-color:black;color:white;position:relative;" type="button">Enviar</button>
+            </div>
+            </div>
         </form>
 
     </div>
@@ -163,10 +167,11 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+        <form>
         <div class="modal-body">
                 <label for="validationCustom05" class="form-label">Resultado</label>
                 <select  class="form-select" id="InpApro" required style="width:250px;">
-                    <option value="3" style="visibility:visible; ">Selecione o Resultado...</option>
+                    <option value="3" style="display:none; ">Selecione o Resultado...</option>
                     <option value="1">Aprovado</option>
                     <option value="2">Reprovado</option>
                 </select>
@@ -174,11 +179,16 @@
 
                 <p id="naoSelecionado"></p>
 
-           
+
+            </div>
 
         <div class="modal-footer" style="position:relative;top:50px;">
-                <button class="btn close" id="BotApro" style="margin:auto;background-color:black;color:white;"  type="submit">Enviar</button>
+                <button class="btn close" id="BotApro" style="margin:auto;background-color:black;color:white;"  type="button">Enviar</button>
         </div>
-    </div>
+    </form>
 </div>
 </div>
+
+<script type="text/javascript">
+   
+</script>
