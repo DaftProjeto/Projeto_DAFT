@@ -34,7 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Aluno\" />
+    <Folder Include="Views\Orientador\" />
   </ItemGroup>
 
 </Project>

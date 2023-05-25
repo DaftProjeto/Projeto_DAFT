@@ -13,7 +13,7 @@ namespace Projeto_DAFT
         public DbSet<RegraEntidade> Regra { get; set; }
         public DbSet<AdministradorEntidade> Administrador { get; set; }
         public DbSet<AlunoEntidade> Aluno { get; set; }
-
+        public DbSet<ProfessorEntidade> Professor { get; set; }
 
     }
 }

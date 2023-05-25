@@ -4,51 +4,50 @@
 
 <head>
 
-    <link rel="stylesheet" href="/css/Orientador.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/Admin.css" asp-append-version="true" />
 
 </head>
 
 
 <center>
 
-    <div id="FundoCadOrientador">
+    <div id="FundoCadAdmin">
         <div class="modal-header" id="CadTextIco">
-            <a href="/Cadastro/Cadastro"> <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad" /></a>
-            <h1 id="CadOri">Cadastro do Orientador</h1>
+            <a href="/Cadastro/Admin"> <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad" /></a>
+            <h1 id="CadAdmin">Cadastro do Administrador</h1>
 
         </div>
 
-        <img src="/Imagens/Orientador icone.png" id="OrientadorIcoCad" />
+        <img src="/Imagens/admin azul.png" id="AdminIcoCad" />
 
-        <form method="">
+        <form method="POST" action="/Cadastro/SalvarUsuario">
 
             <div id="Nome">
-                <label id="OrientadorNomeLab" class="form-label">Nome*</label>
+                <label id="AdminNomeLab" class="form-label">Nome*</label>
                 <input type="text" name="" class="form-control" id="NomeInp" required />
             </div>
 
             <div id="Telefone">
-                <label id="OrientadorTeleLab" class="form-label">Telefone*</label>
+                <label id="AdminTeleLab" class="form-label">Telefone*</label>
                 <input type="text" name="" class="form-control" id="TeleInp" required placeholder="9999999999" />
             </div>
 
             <div id="Email">
-                <label id="OrientadorEmaiLab" class="form-label">Email*</label>
+                <label id="AdminEmaiLab" class="form-label">Email*</label>
                 <input type="email" name="" class="form-control" id="EmailInp" placeholder="email@@.com" required />
             </div>
 
 
 
-            <div id="Lattes">
-                <label id="LattesLab" class="form-label">Lattes</label>
-                <input type="text" name="" class="form-control" id="LattesInp" />
+            <div id="Cod">
+                <label id="CodLab" class="form-label">Codigo do Administrador*</label>
+                <input type="text" name="" class="form-control" id="CodInp" />
             </div>
 
             <div id="Senha">
                 <label id="SenhaLab" class="form-label">Senha</label>
                 <input type="text" name="" class="form-control" id="SenhaInp" />
             </div>
-
 
             <div id="CheckLabEmail">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
