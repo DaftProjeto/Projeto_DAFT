@@ -1,7 +1,21 @@
 ﻿<head>
 
     <link rel="stylesheet" href="/css/Gerenciador_Atividades_Curriculares.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+    <script>
+    $(document).ready(function()
+    {
+    $("#InputS").on("keyup", function()
+    {
+    var value = $(this).val().toLowerCase();
+    $("#tb tr").filter(function()
+    {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    });
+    });
+    </script>
 </head>
 
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-left:20px;" aria-label="breadcrumb">
@@ -17,24 +31,93 @@
     </h1>
 <table class="table">
 
-    <thead class="table-dark">
-        <tr style="border-radius:10px;">
-            <th scope="col">Curso</th>
-            <th scope="col">Nome do Aluno</th>
-            <th scope="col">RA</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Data de Envio</th>
-            <th scope="col">Revisão</th>
-            <th scope="col">Agendamento</th>
-            <th scope="col">Aprovação</th>
-            <th scope="col"></th>
+        <thead class="table-dark">
+            <tr style="border-radius:10px;position: sticky; top: 0; z-index: 1;">
+                <th scope="col">Curso</th>
+                <th scope="col">Nome do Aluno</th>
+                <th scope="col">RA</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Data de Envio</th>
+                <th scope="col">Revisão</th>
+                <th scope="col">Agendamento</th>
+                <th scope="col">Aprovação</th>
+                <form class="d-flex" role="search">
+                <th style="width:200px;position: sticky; top: 0; z-index: 1;">
 
-        </tr>
+                    <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
+                </th>
+
+                </form>
+    </tr>
     </thead>
 
-        <tbody style="background-color:white;border-radius:10px;height:40px;">
+        <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
             <tr>
+
+        <th scope="row">2</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>do</td>
+                <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                    </a>
+                </td>
+                <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                <td>
+
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>do</td>
+                <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                    </a>
+                </td>
+                <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                <td>
+
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
 
         <th scope="row" >1</th> 
         <td>Mark</td>
@@ -51,11 +134,325 @@
                 <td>
    
                     <a data-target="#myModal" data-toggle="modal">
-                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;" id="eyes" />
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
                     </a>
                 </td>
             </tr>
+     <tr>
 
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>do</td>
+                <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                    </a>
+                </td>
+                <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                <td>
+
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>do</td>
+                <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                    </a>
+                </td>
+                <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                <td>
+
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+     <tr>
+
+        <th scope="row" >1</th> 
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>do</td>
+        <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                        </a>
+                </td>
+        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen"/></a></td>
+        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro"/></a></td>
+                <td>
+   
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>do</td>
+                <td>do</td>
+                <td>
+                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
+                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
+                    </a>
+                </td>
+                <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                <td>
+
+                    <a data-target="#myModal" data-toggle="modal">
+                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                    </a>
+                </td>
+            </tr>
 
 
     </tbody>
