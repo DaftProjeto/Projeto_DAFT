@@ -15,5 +15,6 @@ namespace Projeto_DAFT
         public DbSet<AlunoEntidade> Aluno { get; set; }
         public DbSet<ProfessorEntidade> Professor { get; set; }
 
+        public DbSet<ProjetoEntidade> Projeto { get; set; }
     }
 }
