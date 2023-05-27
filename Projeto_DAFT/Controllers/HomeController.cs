@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
+using Microsoft.EntityFrameworkCore;
 using Projeto_DAFT.Entidades;
 using Projeto_DAFT.Models;
 
@@ -32,9 +33,30 @@ namespace Projeto_DAFT.Controllers
         [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult Gerenciador_Atividades_Curriculares()
         {
-            return View(contexto.Projeto.ToList());
+            var aux = contexto.Database.ExecuteSqlRaw("SELECT TITULO, CURSO FROM PROJETO WHERE ID = 1");
+            return View(aux);
+            //return View(contexto.Projeto.Include(a => a.Aluno).ToList());
+            /*return View(contexto.Database.ExecuteSqlRaw("" +
+               "SELECT p.Titulo, p.Curso, p.Tipo, p.Turno, p.Caminho, p.Data_Envio," +
+               "a.Nome, a.RA, po.Nome, s.Ano" +
+               " FROM PROJETO p" +
+               "INNER JOIN ALUNO a on p.ID_Aluno = a.ID" +
+               "INNER JOIN PROF_ORIENTADOR po on p.ID_Orientador = po.ID" +
+               "INNER JOIN SEMESTRE s ON p.ID_Semestre = s.ID" +
+               "INNER JOIN USUARIO u ON a.ID_Usuario = u.ID AND po.ID_Usuario = u.ID"
+           ));*/
         }
 
+        /*public ActionResult geraDados(int id)
+        {
+            var resultado = contexto.Projeto.
+            Select(x => new ProjetoViewModel()
+            {
+                Titulo = x.Titulo.ToString(),
+
+            }).ToList();
+            return RedirectToAction("Index");
+        }*/
 
 
 
@@ -82,6 +104,14 @@ namespace Projeto_DAFT.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+
+        [HttpPost]
+        public ActionResult SalvarProjeto(ProjetoViewModel dados)
+        { 
+            //contexto.Projeto.Add(dados);
+            //contexto.SaveChanges();
+            return View("/Home/Gerenciador_Atividades_Curriculares");
+        }
 
 
 
