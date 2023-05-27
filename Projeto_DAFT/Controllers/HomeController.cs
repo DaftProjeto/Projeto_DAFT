@@ -29,12 +29,37 @@ namespace Projeto_DAFT.Controllers
             return View();
         }
 
+        /*
+         * 
+         * COISAS Q TEM Q IR NO GERENCIADOR
+         * @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Curso</td>
+                    <td>@item.Curso</td>
+                    <td>@item.Curso</td>
+                    <td>@item.Titulo</td>
+                    <td>@item.Data_Envio</td>
+                    <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                    <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                    <td>
+
+                        <a data-target="#myModal" data-toggle="modal">
+                            <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        */
+
 
         [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult Gerenciador_Atividades_Curriculares()
         {
-            var aux = contexto.Database.ExecuteSqlRaw("SELECT TITULO, CURSO FROM PROJETO WHERE ID = 1");
-            return View(aux);
+            return View(contexto.Projeto.ToList());
+            //var aux = contexto.Database.ExecuteSqlRaw("SELECT TITULO, CURSO FROM PROJETO WHERE ID = 1");
+            //return View(aux);
             //return View(contexto.Projeto.Include(a => a.Aluno).ToList());
             /*return View(contexto.Database.ExecuteSqlRaw("" +
                "SELECT p.Titulo, p.Curso, p.Tipo, p.Turno, p.Caminho, p.Data_Envio," +
@@ -45,23 +70,23 @@ namespace Projeto_DAFT.Controllers
                "INNER JOIN SEMESTRE s ON p.ID_Semestre = s.ID" +
                "INNER JOIN USUARIO u ON a.ID_Usuario = u.ID AND po.ID_Usuario = u.ID"
            ));*/
-        }
+    }
 
-        /*public ActionResult geraDados(int id)
+    /*public ActionResult geraDados(int id)
+    {
+        var resultado = contexto.Projeto.
+        Select(x => new ProjetoViewModel()
         {
-            var resultado = contexto.Projeto.
-            Select(x => new ProjetoViewModel()
-            {
-                Titulo = x.Titulo.ToString(),
+            Titulo = x.Titulo.ToString(),
 
-            }).ToList();
-            return RedirectToAction("Index");
-        }*/
+        }).ToList();
+        return RedirectToAction("Index");
+    }*/
 
 
 
-        //LOGIN E LOGOFF
-        [HttpPost]
+    //LOGIN E LOGOFF
+    [HttpPost]
         public async Task<ActionResult> Login(string usuario, string senha)
         {
             UsuarioEntidade usuarioLogado = contexto.Usuario.Where(a => a.Nome == usuario && a.Senha == senha).FirstOrDefault();
