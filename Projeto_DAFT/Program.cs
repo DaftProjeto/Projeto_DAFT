@@ -7,8 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>(
-    opt => opt.UseSqlServer("Server=c3po;Database=PROJETO_TCC_ANTEPROJETO_INICIAL;Trusted_Connection=True;")
+    opt => opt.UseSqlServer("Server=DESKTOP-AIV65GI\\SQLEXPRESS;Database=PROJETO_TCC_ANTEPROJETO_INICIAL;Trusted_Connection=True;")
     );
+
+builder.Services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option =>
+{
+    option.LoginPath = "/Login/Entrar";
+    option.AccessDeniedPath = "/";
+});
 
 var app = builder.Build();
 
@@ -25,6 +31,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.WebEncoders.Testing;
 using Projeto_DAFT.Entidades;
 using Projeto_DAFT.Models;
-
+using System.Reflection.Metadata.Ecma335;
 
 namespace Projeto_DAFT.Controllers
 {
@@ -103,6 +104,7 @@ namespace Projeto_DAFT.Controllers
             return RedirectToAction("TipoCadastro");
         }
 
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult EditarUsuario(string id) 
         {
             return View();

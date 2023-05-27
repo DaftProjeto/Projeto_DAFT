@@ -8,6 +8,13 @@
 
 </head>
 
+@if (TempData["erro"] != null)
+{
+    <div class="alert alert-danger" style="width: 90%; margin-left: 5%;">
+        <p>@TempData["erro"]</p>
+    </div>
+}
+
 <div id="IndexTotal1">
     <div class="card">
         <div class="card-body">

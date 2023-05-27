@@ -1,82 +1,99 @@
-﻿<head>
+﻿
+@model List<Projeto_DAFT.Entidades.ProjetoEntidade>
+
+<head>
 
     <link rel="stylesheet" href="/css/Gerenciador_Atividades_Curriculares.css" asp-append-version="true" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            $("#InputS").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#tb tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </head>
 
-<style>
-   
-  
-</style>
+<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-left:20px;" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Home/Index" style="text-decoration:none; color:#00648C;">Página Inicial</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Atividades Curriculares</li>
+    </ol>
+</nav>
 
 <div id="FundoTabela">
     <h1 style="color:white;  text-align: center;">
         Gerenciamento de Atividades Curriculares
     </h1>
-<table class="table">
+    <table class="table">
 
-    <thead class="table-dark">
-        <tr style="border-radius:10px;">
-            <th scope="col">Curso</th>
-            <th scope="col">Nome do Aluno</th>
-            <th scope="col">RA</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Data de Envio</th>
-            <th scope="col">Revisão</th>
-            <th scope="col">Agendamento</th>
-            <th scope="col">Aprovação</th>
-            <th scope="col"></th>
+        <thead class="table-dark">
+            <tr style="border-radius:10px;position: sticky; top: 0; z-index: 1;">
+                <th scope="col">Curso</th>
+                <th scope="col">Nome do Aluno</th>
+                <th scope="col">RA</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Data de Envio</th>
+                <th scope="col">Revisão</th>
+                <th scope="col">Agendamento</th>
+                <th scope="col">Aprovação</th>
+                <form class="d-flex" role="search">
+                <th style="width:200px;position: sticky; top: 0; z-index: 1;">
 
-        </tr>
-    </thead>
+                    <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
+                </th>
 
-        <tbody style="background-color:white;border-radius:10px;height:40px;">
-
-            <tr>
-
-        <th scope="row" >1</th> 
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>do</td>
-        <td>do</td>
-                <td>
-                    <a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg">
-                        <img src="/Imagens/Aguardando icon.png" style="width:20px;" />
-                        </a>
-                </td>
-        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
-        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;"/></a></td>
-                <td>
-   
-                    <a data-target="#myModal" data-toggle="modal">
-                        <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;" id="eyes" />
-                    </a>
-                </td>
+                </form>
             </tr>
+        </thead>
 
+        <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Curso</td>
+                    <td>@item.ID_Aluno</td>
+                    <td>@item.RA</td>
+                    <td>@item.Titulo</td>
+                    <td>@item.Data_Envio</td>
+                    <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                    <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                    <td>
 
-    </tbody>
+                        <a data-target="#myModal" data-toggle="modal">
+                            <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+            }
+
+        </tbody>
 
     </table>
-    </div>
+</div>
 
 <div id="myModal" class="modal" aria-hidden="true" aria-labelledby="myModal">
     <div id="FundoModal">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Dados Do Projeto</h1>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                <label>Nome:</label> 
-
-
-                </div>
-             
-            </div>
+        <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Dados Do Projeto</h1>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+        <div class="modal-body">
+            <label>Nome:</label>
+
+
+        </div>
+
+    </div>
+</div>
 
 
 <div id="ModalRevisao" class="modal" aria-hidden="true" aria-labelledby="ModalRevisao">
@@ -87,28 +104,30 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
-            <label>Nome do aluno:</label>
-            <input style="display:block;" readonly/>
+        <form>
+            <div class="modal-body">
+                <label>Nome do aluno:</label>
+                <input style="display:block;" readonly />
 
 
-            <label>Curso do aluno:</label>
-            <input style="display:block;" readonly/>
+                <label>Curso do aluno:</label>
+                <input style="display:block;" readonly />
 
-            <label>Tema do aluno:</label>
-            <input style="display:block;" readonly/>
+                <label>Tema do aluno:</label>
+                <input style="display:block;" readonly />
 
-            
-            <label class="custom-file-upload" >
-                <input type="file" id="file" />
-                Adicionar Documento
-            </label>
-            <input type="text" name="name" id="name" class="form-label" readonly>
-        </div>
 
-        <div class="modal-footer" style="position:relative;top:50px;">
-        <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
-        </div>
+                <label class="custom-file-upload">
+                    <input type="file" id="file" class="testeinp" />
+                    Adicionar Documento
+                </label>
+                <input type="text" name="name" id="name" class="form-label" readonly>
+            </div>
+
+            <div class="modal-footer" style="position:relative;top:50px;">
+                <button class="btn" style="margin:auto;background-color:black;color:white;" type="button" id="EnviarDocRev">Enviar</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -120,27 +139,33 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        
-        <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
-        <p>Disponibilidade do Aluno</p>
-        
+        <form>
+            <div class="modal-body">
+                <div style="margin-left:20px;display:inline-block;float:left;margin-top:20px;">
+
+                    <p>Disponibilidade do Aluno</p>
 
 
 
 
-        </div>
-        <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
-            <label for="validationCustom05" class="form-label">Data para Defesa</label>
 
-            <input type="date" class="form-select" id="validationCustom04" required style="width:250px;">
+                </div>
+                <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
+                    <label for="validationCustom05" class="form-label">Data para Defesa</label>
 
-         
+                    <input type="date" class="form-select" id="DefInp" style="width:250px;" required>
 
-        </div>
 
-        <div class="modal-footer" style="position:relative;top:200px;width:100%;">
-            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
-        </div>
+                </div>
+                <p id="testeteste"></p>
+
+                <div class="modal-footer" style="position:absolute;top:290px;width:580px;">
+                    <button class="btn close" id="BotaoAgend" style="margin:auto;background-color:black;color:white;position:relative;right:8px;" type="button">Enviar</button>
+                </div>
+            </div>
+
+        </form>
+
     </div>
 </div>
 
@@ -154,28 +179,51 @@
 <div id="ModalAprovado" class="modal" aria-hidden="true" aria-labelledby="ModalAprovado">
     <div id="FundoModalAprovado">
         <div class="modal-header">
-            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Revisão Do Projeto</h1>
+            <h1 class="modal-title" id="exampleModalLabel" style="margin:auto;">Estado do Aluno</h1>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
-            
+        <form>
+            <div class="modal-body">
+
+                <div style="display:inline-block;margin-top:5px;margin-right:20px;">
+
+                    <label for="validationCustom05" class="form-label">Resultado</label>
+                    <select class="form-select" id="InpApro" required style="width:250px;">
+                        <option value="3" style="display:none; ">Selecione o Resultado...</option>
+                        <option value="1">Aprovado</option>
+                        <option value="2">Reprovado</option>
+                    </select>
+                </div>
+
+                <p id="naoSelecionado"></p>
 
 
-            <div style="display:inline-block;margin-top:20px;float:right;margin-right:20px;">
-                <label for="validationCustom05" class="form-label">Aprovação</label>
-                <select class="form-select" id="validationCustom04" required style="width:250px;">
-                    <option value="" style="visibility:hidden; display:none;">Selecione o Resultado...</option>
-                    <option value="">Aprovado</option>
-                    <option value="">Reprovado</option>
-                </select>
-
+                <div class="modal-footer" style="position:absolute;width:480px;top:185px;">
+                    <button class="btn close" id="BotApro" style="margin:auto;background-color:black;color:white;position:relative;right:8px;" type="button">Enviar</button>
+                </div>
             </div>
 
-        <div class="modal-footer" style="position:relative;top:50px;">
-            <button class="btn" style="margin:auto;background-color:black;color:white;">Enviar</button>
-        </div>
+        </form>
     </div>
 </div>
-</div>
+
+<script type="text/javascript">
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DefInp").setAttribute("min", today);
+</script>
+
