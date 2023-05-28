@@ -22,7 +22,20 @@
                 <a href="/Home/Index">
                     <img src="/Imagens/Logo_DAFT.png" width="130px" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                 </a>
-                
+               @*  
+               exemplo de como usar a claim com nome do usuario logado
+               
+               @{
+                    var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+
+                    var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name).Value;
+                }
+                <p class="navbar-text navbar-right" style="color:white;">
+                    Bem vindo @Nome | 
+                    <a style="color:white;" href="~/Login/Logoff/"><i class="icon-logout"></i>
+                        Logoff
+                        </a>
+                        </p>*@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
