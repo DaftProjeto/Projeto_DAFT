@@ -2,7 +2,7 @@
 {
     public class RegraEntidade
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Regra { get; set; }   
 
     }

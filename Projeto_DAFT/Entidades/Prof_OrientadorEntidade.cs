@@ -2,7 +2,8 @@
 {
     public class Prof_OrientadorEntidade
     {
-        public int ID { get; set; }
-        public int ID_Professor { get; set; }
+        public int Id { get; set; }
+        public int ProfessorId { get; set; }
+        public ProfessorEntidade Professor { get; set; }
     }
 }

@@ -22,7 +22,9 @@
                 <a href="/Home/Index">
                     <img src="/Imagens/Logo_DAFT.png" width="130px" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                 </a>
-               @*  
+                    
+                    
+                    @*  
                exemplo de como usar a claim com nome do usuario logado
                
                @{
@@ -43,75 +45,84 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li  class="nav-item">
-                            
-                            <a id="GerenciamentoAtividadesHeader" class="nav-link" asp-area="" asp-controller="Home" asp-action="Gerenciador_Atividades_Curriculares">Gerenciamento de Atividades Curriculares</a>
-                            
+                            <a id="GerenciamentoAtividadesHeader" class="nav-link" asp-area="" asp-controller="Home" asp-action="Gerenciador_Atividades_Curriculares">Gerenciamento de Atividades Curriculares</a>  
                         </li>
-                        
+                            <script>
+                                function pageonLoad() {
+                                    document.getElementById(auxVisu).style.display = 'none';
+                                }
+                            </script>
                     </ul>
-                    <li class="navbar nav-item">
-                        <a>
+                        <li class="navbar nav-item">
+                            @{
+                                var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+                                
+                                var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
                         
-                        <img type="button" src="/Imagens/Login.png" width="85px" data-bs-toggle="modal" 
-                        data-bs-target="#ModalLogin" style="position:relative;margin-left:30%;" class="btn nav-link text-dark" asp-area="">
+                            }
+                            @if (Nome != null)
+                            {
+                                <a href="/Home/Logoff" onload="pageonLoad">
+                                    <p>@Nome</p>   
+                                </a>
+                                
 
-                            <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div style="border-radius:10px; height:640px" class="modal-content">
-                                        <div class="modal-header">
-                                            
-                                               <h1 style="transform:translate(368%)" class="modal-title fs-5" id="ModalLoginLabel">Entrar</h1>
-                                           
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="navbar">
-                                                <img style="transform: translate(65%)" width="200px" src="/Imagens/Icon_ModalLogin.png"/>
+                            }
+                            
+                                <a id="auxVisu">
+                                    <img type="button" src="/Imagens/Login.png" width="85px" data-bs-toggle="modal" data-bs-target="#ModalLogin" style="position:relative;margin-left:30%;" class="btn nav-link text-dark" asp-area="">
+                                    <div class="modal fade" id="ModalLogin" tabindex="-1" aria-labelledby="ModalLoginLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div style="border-radius:10px; height:640px" class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 style="transform:translate(368%)" class="modal-title fs-5" id="ModalLoginLabel">Entrar</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="navbar">
+                                                        <img style="transform: translate(65%)" width="200px" src="/Imagens/Icon_ModalLogin.png"/>
+                                                    </div>
+                                                    <form action="/Home/Login" method="post">
+                                                        <div class="mb-3">
+                                                            <label for="recipient-name" class="col-form-label">RA ou Lattes</label>
+                                                            <input type="text" class="form-control" id="recipient-name" name="usuario" >
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="exampleInputPassword1" class="form-label">Senha</label>
+                                                            <input type="password" class="form-control" id="password" name="senha">                                                    
+                                                        </div>
+                                                        <div class="mb-3 form-check">
+                                                            <input onclick="showHide()" type="checkbox" class="form-check-input" id="check">
+                                                            <label class="form-check-label" for="exampleCheck1">Exibir senha</label>
+                                                        </div>
+                                                            <button style="background-color:black; color:white; width:25%; transform: translate(145%);"type="submit" class="btn">
+                                                                Entrar
+                                                            </button>
+                                                            </br>
+                                                            <p style="float:left;display:inline;position:relative;display:flex;top:10px;">
+                                                                Não possui conta?
+                                                                <a href="/Cadastro/TipoCadastro">
+                                                                    Clique aqui
+                                                                </a>
+                                                            </p>
+                                                            <br/>
+                                                            <br/>
+                                                            <p style="float:left;display:inline;position:relative;display:flex;bottom:10px;">
+                                                                Esqueci minha senha
+                                                                <a href="/Cadastro/Cadastro">
+                                                                    Clique aqui
+                                                                </a>
+                                                            </p>
+                                                    </form>                              
+                                                </div>
                                             </div>
-                                            <form action="/Home/Login" method="post">
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">RA ou Lattes</label>
-                                                    <input type="text" class="form-control" id="recipient-name" name="usuario" >
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="exampleInputPassword1" class="form-label">Senha</label>
-                                                    <input type="password" class="form-control" id="password" name="senha">                                                    
-                                                </div>
-                                                <div class="mb-3 form-check">
-                                                    <input onclick="showHide()" type="checkbox" class="form-check-input" id="check">
-                                                    <label class="form-check-label" for="exampleCheck1">Exibir senha</label>
-                                                </div>
-                                                    <button style="background-color:black; color:white; width:25%; transform: translate(145%);"
-                                                            type="submit" class="btn">
-                                                        Entrar
-                                                    </button>
-                                                    </br>
-
-
-                                                    <p style="float:left;display:inline;position:relative;display:flex;top:10px;">
-                                                        Não possui conta?
-                                                        <a href="/Cadastro/TipoCadastro">
-                                                            Clique aqui
-                                                        </a>
-                                                    </p>
-                                                    <br />
-                                                    <br />
-                                                    <p style="float:left;display:inline;position:relative;display:flex;bottom:10px;">
-                                                        Esqueci minha senha
-                                                        <a href="/Cadastro/Cadastro">
-                                                            Clique aqui
-                                                        </a>
-                                                    </p>
-                                            </form>
-                                                                                                                          
-                                            
-                                            
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                                </a>
+                            
+                        
+                        </li>
+                        
                 </div>
                 <a>
                     

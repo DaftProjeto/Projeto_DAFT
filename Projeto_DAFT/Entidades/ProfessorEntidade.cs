@@ -2,7 +2,11 @@
 {
     public class ProfessorEntidade
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Matricula { get; set; }
+
+
+        public int UsuarioId { get; set; }
+        public UsuarioEntidade Usuario { get; set; }
     }
 }

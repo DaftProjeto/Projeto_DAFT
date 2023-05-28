@@ -7,7 +7,7 @@
         public string Tipo { get; set; }
         public string Caminho { get; set; }
 
-        public int AlunoId { get; set; }
+        public int AlunoId{ get; set; }
         public AlunoEntidade Aluno { get; set; }
 
         public int OrientadorId { get; set; }
@@ -18,7 +18,7 @@
         public SemestreEntidade Semestre { get; set; }
        
         public string Curso { get; set; }
-        public DateTime Data_Envio { get; set; }
+        public DateTime Data_Entrega { get; set; }
 
     }
 }

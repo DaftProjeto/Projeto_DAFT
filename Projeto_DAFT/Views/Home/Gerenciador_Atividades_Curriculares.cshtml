@@ -1,5 +1,4 @@
-﻿
-@model List<Projeto_DAFT.Entidades.ProjetoEntidade>
+﻿@model List<Projeto_DAFT.Models.ExemploViewModel>
 
 <head>
 
@@ -53,25 +52,42 @@
 
         <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
+        
             @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.Curso</td>
-                    <td>@item.Curso</td>
-                    <td>@item.Curso</td>
+                    <td>@item.Nome_Aluno</td>
+                    <td>@item.RA</td>
                     <td>@item.Titulo</td>
-                    <td>@item.Data_Envio</td>
+                    <td>@item.Data_Entrega</td>
                     <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
-
                         <a data-target="#myModal" data-toggle="modal">
                             <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
                         </a>
                     </td>
                     <td></td>
                 </tr>
+                
             }
+                <tr>
+                    <td>Curso</td>
+                    <td>Aluno.Id</td>
+                    <td>Aluno.RA</td>
+                    <td>Titulo</td>
+                    <td>Data_Entrega</td>
+                    <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                    <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
+                    <td>
+                        <a data-target="#myModal" data-toggle="modal">
+                            <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+            
 
         </tbody>
 

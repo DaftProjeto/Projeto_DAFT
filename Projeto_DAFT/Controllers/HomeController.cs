@@ -26,14 +26,23 @@ namespace Projeto_DAFT.Controllers
 
         public IActionResult Index()
         {
-            int id = 1;
-            ProjetoEntidade model = contexto.Projeto.Where(a => a.Id == id).Include(a => a.Aluno).Include(a => a.Orientador).Include(a => a.Semestre).FirstOrDefault();
 
-
-            return View(model);
+            return View();
         }
 
-        
+        public IActionResult Entrar()
+        {
+            return View();
+        }
+        public IActionResult RegrasTCC()
+        {
+            return View(contexto.Regra.ToList());
+        }
+
+        public IActionResult RegrasAnteprojeto()
+        {
+            return View(contexto.Regra.ToList());
+        }
 
         /*
          * 
@@ -63,7 +72,23 @@ namespace Projeto_DAFT.Controllers
         [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult Gerenciador_Atividades_Curriculares()
         {
-            return View(contexto.Projeto.ToList());
+
+            //return View();
+            //var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+            //var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+            var Id = 1;
+            ProjetoEntidade model = contexto?.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Orientador).FirstOrDefault();
+            //model.Aluno.Usuario.Nome = "Teste";
+            return View(model);
+
+            /*
+                @foreach (var modal in Model)
+                {
+                    modal.
+                }
+            */
+
+
             //var aux = contexto.Database.ExecuteSqlRaw("SELECT TITULO, CURSO FROM PROJETO WHERE ID = 1");
             //return View(aux);
             //return View(contexto.Projeto.Include(a => a.Aluno).ToList());
@@ -76,23 +101,23 @@ namespace Projeto_DAFT.Controllers
                "INNER JOIN SEMESTRE s ON p.ID_Semestre = s.ID" +
                "INNER JOIN USUARIO u ON a.ID_Usuario = u.ID AND po.ID_Usuario = u.ID"
            ));*/
-    }
+        }
 
-    /*public ActionResult geraDados(int id)
-    {
-        var resultado = contexto.Projeto.
-        Select(x => new ProjetoViewModel()
+        /*public ActionResult geraDados(int id)
         {
-            Titulo = x.Titulo.ToString(),
+            var resultado = contexto.Projeto.
+            Select(x => new ProjetoViewModel()
+            {
+                Titulo = x.Titulo.ToString(),
 
-        }).ToList();
-        return RedirectToAction("Index");
-    }*/
+            }).ToList();
+            return RedirectToAction("Index");
+        }*/
 
 
 
-    //LOGIN E LOGOFF
-    [HttpPost]
+        //LOGIN E LOGOFF
+        [HttpPost]
         public async Task<ActionResult> Login(string usuario, string senha)
         {
             UsuarioEntidade usuarioLogado = contexto.Usuario.Where(a => a.Nome == usuario && a.Senha == senha).FirstOrDefault();
@@ -146,15 +171,7 @@ namespace Projeto_DAFT.Controllers
 
 
 
-        public IActionResult RegrasTCC()
-        {
-            return View();
-        }
-
-        public IActionResult RegrasAnteprojeto()
-        {
-            return View();
-        }
+        
 
     }
 }

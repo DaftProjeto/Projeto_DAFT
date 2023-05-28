@@ -2,7 +2,8 @@
 {
     public class AdministradorEntidade 
     {
-        public int ID { get; set; }
-        public UsuarioEntidade ID_Usuario { get; set; }
+        public int Id { get; set; }
+        public int UsuarioId { get; set; }
+        public UsuarioEntidade Usuario { get; set; }
     }
 }
