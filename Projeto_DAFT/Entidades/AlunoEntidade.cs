@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string RA { get; set; }
-        public int ID_Usuario { get; set; }
-        public UsuarioEntidade usuario { get; set; }
+        public int UsuarioId { get; set; }
+        public UsuarioEntidade Usuario { get; set; }
 
     }
 }

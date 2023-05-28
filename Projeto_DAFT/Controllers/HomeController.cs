@@ -26,8 +26,14 @@ namespace Projeto_DAFT.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            int id = 1;
+            ProjetoEntidade model = contexto.Projeto.Where(a => a.Id == id).Include(a => a.Aluno).Include(a => a.Orientador).Include(a => a.Semestre).FirstOrDefault();
+
+
+            return View(model);
         }
+
+        
 
         /*
          * 

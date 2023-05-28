@@ -7,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>(
-    opt => opt.UseSqlServer("Server=DESKTOP-AIV65GI\\SQLEXPRESS;Database=PROJETO_TCC_ANTEPROJETO_INICIAL;Trusted_Connection=True;")
+    //opt => opt.UseSqlServer("Server=DESKTOP-AIV65GI\\SQLEXPRESS;Database=PROJETO_TCC_ANTEPROJETO_INICIAL;Trusted_Connection=True;")
+    opt => opt.UseSqlServer("Server=201.55.32.20;Database=DAFT;User Id=pw_tarde;Password=aluno123;")
     );
 
 builder.Services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option =>
