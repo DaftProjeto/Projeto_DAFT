@@ -30,9 +30,11 @@ namespace Projeto_DAFT.Controllers
         [HttpPost]
         public ActionResult EnvioProjeto(ProjetoEntidade proj)
         {
+            var aux = contexto.Usuario.Find(proj.AlunoId);
+            proj.Caminho = "Usuarios/" + aux.Nome+ "/Arquivos/"+ proj.Caminho;
             contexto.Projeto.Add(proj);
             contexto.SaveChanges();
-            return RedirectToAction("/Home/Gerenciador_Ativades_Curriculares");
+            return Redirect("/Home/Gerenciador_Ativades_Curriculares");
         }
     }
 }
