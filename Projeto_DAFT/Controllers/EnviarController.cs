@@ -31,10 +31,10 @@ namespace Projeto_DAFT.Controllers
         public ActionResult EnvioProjeto(ProjetoEntidade proj)
         {
             var aux = contexto.Usuario.Find(proj.AlunoId);
-            proj.Caminho = "Usuarios/" + aux.Nome+ "/Arquivos/"+ proj.Caminho;
+            proj.Caminho = "Usuarios/" + aux.Id + "_Aluno"  + "/Arquivos/"+ proj.Caminho;
             contexto.Projeto.Add(proj);
             contexto.SaveChanges();
-            return Redirect("/Home/Gerenciador_Ativades_Curriculares");
+            return Redirect("/Home/Gerenciador_Atividades_Curriculares");
         }
     }
 }

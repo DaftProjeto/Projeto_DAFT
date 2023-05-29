@@ -76,7 +76,7 @@ namespace Projeto_DAFT.Controllers
             //return View();
             //var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
             //var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
-            var Id = 1;
+            var Id = 2;
             ProjetoEntidade model = contexto?.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Orientador).FirstOrDefault();
             //model.Aluno.Usuario.Nome = "Teste";
             return View(model);
