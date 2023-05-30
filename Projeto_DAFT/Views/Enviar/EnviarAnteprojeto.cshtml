@@ -1,4 +1,6 @@
-﻿<head>
+﻿@model List<Projeto_DAFT.Entidades.ProfessorEntidade>
+
+<head>
 
     <link rel="stylesheet" href="/css/EnviarAnteprojeto.css" asp-append-version="true" />
 
@@ -61,7 +63,7 @@
 
                     <select class="form-select" id="validationCustom04" required name="Curso">
                         <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
-                        <option value="">Agronegócio</option>
+                        <option>Agronegócio</option>
                         <option>Análise e Desenvolvimento de Sistemas</option>
                         <option>Gestão Empresarial (EaD)</option>
                         <option>Produção Industrial</option>
@@ -82,11 +84,12 @@
 
                 <div class="col">
                     <label for="validationCustom05" class="form-label">Orientador</label>
-                    <select class="form-select" id="validationCustom04" required name="OrientadorId">
+                    <select class="form-select" id="validationCustom04" required name="ProfessorId">               
                         <option value="" style="visibility:hidden; display:none;">Selecione o Orientador...</option>
-                        <option value="2">Carlos</option>
-                        <option value="">Daniela</option>
-                        <option value="">Fernando</option>
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.Id">@item.Usuario.Nome</option>
+                        }   
                     </select>
                 </div>
             </div>

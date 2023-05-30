@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Projeto_DAFT.Entidades;
 
 namespace Projeto_DAFT.Controllers
@@ -13,7 +14,14 @@ namespace Projeto_DAFT.Controllers
         }
         public IActionResult EnviarAnteprojeto()
         {
-            return View();
+            var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+
+            var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+
+            //var aux = contexto.Usuario.Find(Nome);
+
+            List<ProfessorEntidade> model = contexto.Professor.Include(a => a.Usuario).ToList();
+            return View(model);
         }
 
         public IActionResult EnviarTCC()
