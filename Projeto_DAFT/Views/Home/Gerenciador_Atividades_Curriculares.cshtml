@@ -1,4 +1,4 @@
-﻿@model Projeto_DAFT.Models.ProjetoViewModel
+﻿@model List<Projeto_DAFT.Entidades.ProjetoEntidade>
 
 <head>
 
@@ -27,6 +27,7 @@
 <div id="FundoTabela">
     <h1 style="color:white;  text-align: center;">
         Gerenciamento de Atividades Curriculares
+       
     </h1>
     <table class="table">
 
@@ -40,44 +41,47 @@
                 <th scope="col">Revisão</th>
                 <th scope="col">Agendamento</th>
                 <th scope="col">Aprovação</th>
-                <form class="d-flex" role="search">
                 <th style="width:200px;position: sticky; top: 0; z-index: 1;">
-
-                    <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
+                    <form class="d-flex" role="search">
+                        <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
+                    </form>
                 </th>
-
-                </form>
             </tr>
         </thead>
 
         <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
-        
-            
-                <tr>
-                    <td>@Model.Curso</td>
-                    <td>@Model.Aluno.Usuario.Nome</td>
-                    <td>@Model.Aluno.RA</td>
-                    <td>@Model.Titulo</td>
-                    <td>@Model.Data_Entrega</td>
-                    <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.Curso</td>
+                        <td>ViniAluno</td>
+                        <td>022048</td>
+                        <td>@item.Titulo</td>
+                        <td>@item.Data_Entrega</td>
+                        <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                        <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
-                        <a data-target="#myModal" data-toggle="modal">
-                            <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
-                        </a>
-                    </td>
-                    <td></td>
-                </tr>
+                            <a data-target="#myModal" data-toggle="modal">
+                                <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            
+           
+                
                 
             
                 <tr>
-                    <td>Curso</td>
-                    <td>Aluno.Id</td>
-                    <td>Aluno.RA</td>
-                    <td>Titulo</td>
-                    <td>Data_Entrega</td>
+                    <td>Análise e desenvolvimento de Sistemas</td>
+                    <td>FernandoAluno</td>
+                    <td>022048123</td>
+                    <td>Teste TCC</td>
+                    <td>30/05/2023</td>
                     <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
+                    <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
                         <a data-target="#myModal" data-toggle="modal">

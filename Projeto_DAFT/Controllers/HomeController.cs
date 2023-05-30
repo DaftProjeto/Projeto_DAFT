@@ -70,19 +70,22 @@ namespace Projeto_DAFT.Controllers
 
 
         [Authorize(AuthenticationSchemes = "CookieAuthentication")]
-        public IActionResult Gerenciador_Atividades_Curriculares(int id)
+        public IActionResult Gerenciador_Atividades_Curriculares()
         {
 
+            return View(contexto.Projeto.ToList());
             //return View();
             //var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
             //var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
 
-           
+
+            /*mais proximo de funfa
             var Id = 1;
             ProjetoEntidade model = contexto.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Professor).FirstOrDefault();
-            //model.Aluno.Usuario.Nome = "Teste";
+            
             return View(model);
-
+            */
+            
             /*
                 @foreach (var modal in Model)
                 {
