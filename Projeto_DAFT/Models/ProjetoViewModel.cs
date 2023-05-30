@@ -2,7 +2,7 @@
 
 namespace Projeto_DAFT.Models
 {
-    public class ProjetoViewModel
+    public class ProjetoViewModel : ProjetoEntidade
     { 
         public string Curso { get; set; }
         public string Nome_Aluno { get; set; }
@@ -12,18 +12,14 @@ namespace Projeto_DAFT.Models
 
 
 
-        /*public ProjetoViewModel() 
+        public ProjetoViewModel() 
         {
             ListaAluno = new List<AlunoEntidade>();
-            //ListaOrientador = new List<Prof_OrientadorEntidade>();
-            //ListaUsuario = new List<UsuarioEntidade>();
-            //ListaSemestre = new List<SemestreEntidade>();   
+            ListaProfessor = new List<ProfessorEntidade>();
         }
 
-        //public List<UsuarioEntidade>ListaUsuario { get; set; }
         public List<AlunoEntidade>ListaAluno { get; set; }
-        //public List<Prof_OrientadorEntidade>ListaOrientador { get; set; }
-        //public List<SemestreEntidade> ListaSemestre { get; set; }
-        */
+        public List<ProfessorEntidade> ListaProfessor { get; set; }
+        
     }
 }

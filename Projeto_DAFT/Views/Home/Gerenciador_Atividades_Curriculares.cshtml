@@ -1,4 +1,4 @@
-﻿@model List<Projeto_DAFT.Entidades.ProjetoEntidade>
+﻿@model Projeto_DAFT.Models.ProjetoViewModel
 
 <head>
 
@@ -53,14 +53,13 @@
         <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
         
-            @foreach (var item in Model)
-            {
+            
                 <tr>
-                    <td>@item.Curso</td>
-                    <td>@item.Aluno.Usuario.Nome</td>
-                    <td>@item.Aluno.RA</td>
-                    <td>@item.Titulo</td>
-                    <td>@item.Data_Entrega</td>
+                    <td>@Model.Curso</td>
+                    <td>@Model.Aluno.Usuario.Nome</td>
+                    <td>@Model.Aluno.RA</td>
+                    <td>@Model.Titulo</td>
+                    <td>@Model.Data_Entrega</td>
                     <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
@@ -71,7 +70,7 @@
                     <td></td>
                 </tr>
                 
-            }
+            
                 <tr>
                     <td>Curso</td>
                     <td>Aluno.Id</td>
