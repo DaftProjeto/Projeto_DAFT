@@ -69,7 +69,7 @@ namespace Projeto_DAFT.Controllers
         */
 
 
-        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
+        //[Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult Gerenciador_Atividades_Curriculares()
         {
 
@@ -77,7 +77,8 @@ namespace Projeto_DAFT.Controllers
             //var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
             //var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
             var Id = 2;
-            ProjetoEntidade model = contexto?.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Orientador).FirstOrDefault();
+            //ProjetoEntidade model = contexto?.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Orientador).FirstOrDefault();
+            List<ProjetoEntidade> model = contexto.Projeto.Include(a => a.Aluno).Include(a => a.Aluno.Usuario).Include(a => a.Professor).ToList();
             //model.Aluno.Usuario.Nome = "Teste";
             return View(model);
 
