@@ -9,7 +9,7 @@ namespace Projeto_DAFT.Controllers
             return View();
         }
 
-        public IActionResult Logar()
+        public IActionResult Entrar()
         {
             return View();
         }
