@@ -9,9 +9,9 @@
 <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;); margin-left:20px;" aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/Home/Index" style="color:#00648C; text-decoration:none">Página Inicial</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a href="/Home/RegrasAnteprojeto" style="color:#00648C; text-decoration:none">Regras Anteprojeto</a></li>
+        <li class="breadcrumb-item"><a href="/Home/RegrasAnteprojeto" style="color:#00648C; text-decoration:none">Regras Anteprojeto</a></li>
         <li class="breadcrumb-item"><a href="/Home/ListarRegras" style="color:#00648C; text-decoration:none">Listar Regras</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Editar Regra</li>
+        <li class="breadcrumb-item active" aria-current="page">Criar Regra</li>
     </ol>
 </nav>
 
@@ -22,21 +22,18 @@
         <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/ListarRegras">
             <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
         </a>
-        <h1 style="margin:auto;">Editar Regra</h1>
+        <h1 style="margin:auto;">Criar Regra</h1>
     </div>
+
     <div class="modal-body" style="border:none;">
-        <form action="/Home/SalvarAlteracao/" method="post">
+        <form action="/Home/CreateRegra/" method="post">
             <div class="row" style="position:relative;">
-                <h5 style="">Informações da Regra</h5>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Id da Regra</label>
-                    <input type="text" class="form-control" name="Id" readonly value="@Model.Id" required />
-                    
-                </div>
+                <h5 style="">Informação da nova Regra</h5>
+                
                 <div class="col">
                     <label for="exampleFormControlTextarea1">Descrição da Regra</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="Regra">@Model.Regra</textarea>
-                </div> 
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required name="Regra"></textarea>
+                </div>
             </div>
             <div class="modal-footer" style="position:relative;top:20px;">
                 <button style="box-shadow:none;" id="BotProxAnteEnviar" class="btn" type="submit">Enviar</button>

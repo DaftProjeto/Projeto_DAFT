@@ -40,16 +40,16 @@
 
                 <div class="col">
                     <label for="validationCustom04" class="form-label">Nome Completo*</label>
-                    <input type="text" class="form-control" value="@Model.Usuario.Nome" disabled required/>
+                    <input type="text" class="form-control" value="@Model.Usuario.Nome" readonly required/>
                     <input type="hidden" name="AlunoId" value="@Model.Aluno.Id"/>
                 </div>
                 <div class="col">
                     <label for="validationCustom04" class="form-label">Telefone*</label>
-                    <input type="tel" class="form-control" value="@Model.Usuario.Telefone" name="Telefone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required placeholder="Só Numeros" />
+                    <input type="tel" class="form-control" value="@Model.Usuario.Telefone" readonly  name="Telefone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required placeholder="Só Numeros" />
                 </div>
                 <div class="col">
                     <label for="validationCustom04" class="form-label">E-mail*</label>
-                    <input type="text" class="form-control" value="@Model.Usuario.Email" name="Email" placeholder="email@@.com" required />
+                    <input type="text" class="form-control" value="@Model.Usuario.Email" readonly name="Email" placeholder="email@@.com" required />
 
                 </div>
             </div>
@@ -112,7 +112,7 @@
 
                 <div class="col">
                     <label for="validationCustom04" class="form-label">RA(Registro do Aluno)*</label>
-                    <input type="number" class="form-control" value="@Model.Aluno.RA" name="RA" style="float:right;" required/>
+                    <input type="number" class="form-control" readonly value="@Model.Aluno.RA" name="RA" style="float:right;" required />
                 </div>
             </div>
 

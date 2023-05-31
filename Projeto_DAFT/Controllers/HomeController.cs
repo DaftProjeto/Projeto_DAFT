@@ -201,17 +201,17 @@ namespace Projeto_DAFT.Controllers
             return View();
         }
 
-        public IActionResult Create(RegraEntidade collection)
+        [HttpPost]
+        public ActionResult CreateRegra(RegraEntidade collection)
         {
             try
 
             {
 
                 contexto.Regra.Add(collection);
-
                 contexto.SaveChanges();
 
-                return RedirectToAction(nameof(AltRegras));
+                return RedirectToAction("ListarRegras");
 
             }
 
@@ -230,16 +230,17 @@ namespace Projeto_DAFT.Controllers
         public IActionResult AlterarRegra(int id)
         {
             //var aux = contexto.Regra.Where(x=> x.Id == id).ToList();
-            return View(contexto.Regra.Where(x => x.Id == id).ToList());
+            return View(contexto.Regra.Where(x => x.Id == id).FirstOrDefault());
 
         }
 
-        [HttpGet]
-        public IActionResult SalvarAlteracao(int id, IFormCollection collection)
+        [HttpPost]
+        public ActionResult SalvarAlteracao(int id, RegraEntidade collection)
         {
-
-            //contexto.Regra.Update(aux);
-            return View("Home/ListarRegras");
+            contexto.Regra.Update(collection);
+            contexto.SaveChanges();
+            //return View("/Home/ListarRegras");
+            return RedirectToAction("ListarRegras");
         }
 
         [HttpGet]
@@ -248,7 +249,7 @@ namespace Projeto_DAFT.Controllers
         {
             contexto.Regra.Remove(contexto.Regra.Where(a => a.Id == id).FirstOrDefault());
             contexto.SaveChanges();
-            return View("/Home/ListarRegras");
+            return RedirectToAction("ListarRegras");
         }
     }
 }
