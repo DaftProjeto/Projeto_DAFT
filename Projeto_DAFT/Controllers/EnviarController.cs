@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projeto_DAFT.Entidades;
 using Projeto_DAFT.Models;
@@ -13,6 +14,8 @@ namespace Projeto_DAFT.Controllers
         {
             contexto = db;
         }
+
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult EnviarAnteprojeto(int id)
         {
             var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;

@@ -35,6 +35,8 @@ namespace Projeto_DAFT.Controllers
         {
             return View();
         }
+
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult ListarRegras()
         {
             return View(contexto.Regra.ToList());
@@ -83,7 +85,7 @@ namespace Projeto_DAFT.Controllers
             //var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
             var Id = 2;
             //ProjetoEntidade model = contexto?.Projeto.Where(a => a.Id == Id).Include(a => a.Aluno).Include(a => a.Orientador).FirstOrDefault();
-            List<ProjetoEntidade> model = contexto.Projeto.Where(a => a.Aluno.Usuario.Nome == @Nome).Include(a => a.Aluno).Include(a => a.Aluno.Usuario).Include(a => a.Professor).ToList();
+            List<ProjetoEntidade> model = contexto.Projeto.Where(a => a.Aluno.Usuario.Nome == @Nome || a.Professor.Usuario.Nome == @Nome).Include(a => a.Aluno).Include(a => a.Aluno.Usuario).Include(a => a.Professor).ToList();
             //model.Aluno.Usuario.Nome = "Teste";
             return View(model);
 
@@ -176,26 +178,7 @@ namespace Projeto_DAFT.Controllers
         }
 
 
-
-
-
-
-
-
-        
-
-
-        public IActionResult AltRegras()
-        {
-            return View(contexto.Regra.ToList());
-        }
-
-
-
-        
-
-
-
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult CriarRegra()
         {
             return View();
@@ -227,6 +210,7 @@ namespace Projeto_DAFT.Controllers
 
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult AlterarRegra(int id)
         {
             //var aux = contexto.Regra.Where(x=> x.Id == id).ToList();
@@ -244,6 +228,7 @@ namespace Projeto_DAFT.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public ActionResult RemoverRegra(int id)
 
         {
