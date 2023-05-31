@@ -37,23 +37,24 @@
 
             <div id="Telefone">
                 <label id="OrientadorTeleLab" class="form-label">Telefone*</label>
-                <input type="text" name="Telefone" class="form-control" id="TeleInp" required placeholder="9999999999" />
+                <input type="text" name="Telefone" class="form-control" id="TeleInp" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required placeholder="Só Numeros" />
+
             </div>
 
             <div id="Email">
-                <label id="OrientadorEmaiLab" class="form-label">Email*</label>
+                <label id="OrientadorEmaiLab" class="form-label">E-mail*</label>
                 <input type="email" name="Email" class="form-control" id="EmailInp" placeholder="email@@.com" required />
             </div>
 
             <input type="hidden" name="tipo" value="2" />
 
             <div id="Lattes">
-                <label id="LattesLab" class="form-label">Lattes</label>
+                <label id="LattesLab" class="form-label">Lattes*</label>
                 <input type="text" name="Lattes" class="form-control" id="LattesInp" />
             </div>
 
             <div id="Senha">
-                <label id="SenhaLab" class="form-label">Senha</label>
+                <label id="SenhaLab" class="form-label">Senha*</label>
                 <input type="password" name="Senha" class="form-control" id="SenhaInp" />
             </div>
 

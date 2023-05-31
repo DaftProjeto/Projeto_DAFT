@@ -16,7 +16,7 @@
     </ol>
 </nav>
 
-<div id="FundoAnteEnviar">
+<div id="FundoAnteEnviar" style="height:580px;">
     <div class="modal-header">
         <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/RegrasAnteprojeto">
             <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
@@ -36,19 +36,18 @@
                 <h5 style="">Dados Pessoais</h5>
 
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" value="@Nome" disabled/>
+                    <label for="validationCustom04" class="form-label">Nome Completo*</label>
+                    <input type="text" class="form-control" value="@Nome" disabled required/>
                     <input type="hidden" name="AlunoId" value="1" />
 
                 </div>
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" name="Telefone" />
-
+                    <label for="validationCustom04" class="form-label">Telefone*</label>
+                    <input type="tel" class="form-control" name="Telefone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required placeholder="Só Numeros" />
                 </div>
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="Email" placeholder="email@@.com" />
+                    <label for="validationCustom04" class="form-label">E-mail*</label>
+                    <input type="text" class="form-control" name="Email" placeholder="email@@.com" required />
 
                 </div>
             </div>
@@ -58,10 +57,10 @@
             <div class="row">
                 <h5 style="margin-top:20px;">Dados Academicos</h5>
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Curso</label>
+                    <label for="validationCustom04" class="form-label">Curso*</label>
 
-                    <select class="form-select" id="validationCustom04" required name="Curso">
-                        <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
+                    <select class="form-select" id="validationCustom04" name="Curso" required>
+                        <option value="" style="visibility:hidden; display:none;">Selecione o Curso...</option>
                         <option>Agronegócio</option>
                         <option>Análise e Desenvolvimento de Sistemas</option>
                         <option>Gestão Empresarial (EaD)</option>
@@ -71,7 +70,7 @@
 
                 </div>
                 <div class="col">
-                    <label for="validationCustom05" class="form-label">Turno</label>
+                    <label for="validationCustom05" class="form-label">Turno*</label>
                     <select class="form-select" id="validationCustom04" required name="Turno">
                         <option value="" style="visibility:hidden; display:none;">Selecione o turno...</option>
                         <option>Manhã</option>
@@ -82,7 +81,7 @@
                 </div>
 
                 <div class="col">
-                    <label for="validationCustom05" class="form-label">Orientador</label>
+                    <label for="validationCustom05" class="form-label">Orientador*</label>
                     <select class="form-select" id="validationCustom04" required name="ProfessorId">               
                         <option value="" style="visibility:hidden; display:none;">Selecione o Orientador...</option>
                         @foreach (var item in Model)
@@ -97,8 +96,8 @@
             <div class="row" style="position:relative;top:10px;">
 
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" name="Titulo" placeholder="trabalho.pdf / fulano de tal-autorizacao.docx" />
+                    <label for="validationCustom04" class="form-label">Titulo*</label>
+                    <input type="text" class="form-control" name="Titulo" placeholder="trabalho.pdf / fulano de tal-autorizacao.docx" required/>
 
                 </div>
                 <div class="col">
@@ -108,32 +107,15 @@
                 </div>
 
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">RA</label>
-                    <input type="number" class="form-control" name="RA" style="float:right;" />
+                    <label for="validationCustom04" class="form-label">RA(Registro do Aluno)*</label>
+                    <input type="number" class="form-control" name="RA" style="float:right;" required/>
                 </div>
             </div>
 
-            <div class="row" style="position:relative;top:20px;">
-
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Semestre Atual</label>
-                    <input type="text" class="form-control" value="1" name="SemestreId" />
-
-                </div>
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Inicio do Semestre</label>
-                    <input type="date" class="form-control" name="Data_E2rega" style="float:right;" />
-
-                </div>
-
-                <div class="col">
-                    <label for="validationCustom04" class="form-label">Fim do Semestre</label>
-                    <input type="date" class="form-control" name="semestrefim" style="float:right;" />
-                </div>
-            </div>
+         
 
             <div class="row" style="position:relative; top:40px; margin-bottom:10px;">
-                <label for="validationCustom04" class="form-label">Enviar Documento</label>
+                <label for="validationCustom04" class="form-label">Enviar Documento*</label>
                 <div class="col input-group" style="">
                     <label class="btn" id="Enviar_Arquivo" style="">
                         <input type="file" id="file" name="Caminho" />

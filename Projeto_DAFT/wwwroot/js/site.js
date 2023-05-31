@@ -171,7 +171,7 @@ function Datacorreta() {
     var datadigitada = dia+'-'+mes+'-'+ano;
 
 
-    var diaat = agora.getUTCDate();
+    var diaat = agora.getUTCDate() - 1;
     var mesat = agora.getUTCMonth() + 1;
     var anoat = agora.getUTCFullYear();
 

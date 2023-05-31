@@ -37,11 +37,12 @@
     
             <div id="Telefone">
                 <label id="AlunoTeleLab" class="form-label">Telefone*</label>
-                <input type="text" name="Telefone" class="form-control" id="TeleInp" required placeholder="9999999999"/>
+                <input type="text" name="Telefone" class="form-control" id="TeleInp" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" required placeholder="Só Numeros" />
+
             </div>
 
             <div id="Email">
-                <label id="AlunoEmaiLab" class="form-label">Email*</label>
+                <label id="AlunoEmaiLab" class="form-label">E-mail*</label>
                 <input type="email" name="Email" class="form-control" id="EmailInp" placeholder="email@@.com" required />
             </div>
 
