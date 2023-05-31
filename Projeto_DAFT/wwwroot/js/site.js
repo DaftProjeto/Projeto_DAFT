@@ -216,3 +216,22 @@ function EnviarAgend() {
 
     }
 }
+
+
+const BotAnt = document.getElementById("BotProxAnteEnviar");
+
+BotAnt.addEventListener("click", () => {
+
+    AdicionadoS()
+})
+
+function AdicionadoS() {
+    const naoSelecionado = document.getElementById("AdicionaComSuc");
+    const Inputteste = document.getElementById("validationCustomteste");
+
+    if (Inputteste >= 0) {
+        naoSelecionado.innerHTML = `<div><p id="AdicionaComSuc">Adicionado com Sucesso</p></div>`
+    }
+
+
+}

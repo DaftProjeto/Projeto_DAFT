@@ -174,5 +174,10 @@ namespace Projeto_DAFT.Controllers
 
         
 
+        public IActionResult EdiçãoRegras()
+        {
+            return View();
+        }
+
     }
 }

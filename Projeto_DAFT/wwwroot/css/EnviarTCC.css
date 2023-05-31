@@ -7,13 +7,7 @@
 
 }
 
-#FundoTCCEnviar2 {
-    width: 60%;
-    margin: auto;
-    background-color: white;
-    height: 640px;
-    border-radius: 10px;
-}
+
 
 #BotProxAnteEnviar {
     color: white;
@@ -23,22 +17,7 @@
     position: relative;
 }
 
-input[type="file"] {
-    display: none;
-}
 
-.custom-file-upload {
-    border: 1px solid #0080ff;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    color: black;
-}
-
-    .custom-file-upload:hover {
-        background-color: #0080ff;
-        color: white;
-    }
 
 #name {    
     outline: none;
@@ -97,6 +76,7 @@ input[type="file"] {
     background-color: gray;
     color: white;
 }
+
 
 input[type="file"] {
     display: none;
