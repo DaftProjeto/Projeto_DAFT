@@ -1,0 +1,79 @@
+﻿@model Projeto_DAFT.Entidades.UsuarioEntidade
+@{
+    Layout = "Layout_Cadastro";
+}
+
+
+<head>
+
+    <link rel="stylesheet" href="/css/Aluno.css" asp-append-version="true" />
+
+</head>
+
+@if (TempData["erro"] != null)
+{
+ <div class="alert alert-danger">
+     @TempData["erro"]
+ </div>   
+}
+
+<center>
+
+    <div id="FundoCadAluno">
+        <div class="modal-header" id="CadTextIco">
+            <a href="/Cadastro/TipoCadastro" > <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad"/></a>
+        <h1 id="CadAlu">Cadastro do Aluno</h1>    
+       
+        </div>
+
+     <img src="/Imagens/aluno icone.png" id="AlucoIcoCad"/>
+
+        <form method="post" action="/Cadastro/SalvarUsuario">
+
+            <div id="Nome">
+                <label id="AlunoNomeLab" class="form-label">Nome*</label>
+                <input type="text" name="Nome" class="form-control" id="NomeInp" required/>
+            </div>
+    
+            <div id="Telefone">
+                <label id="AlunoTeleLab" class="form-label">Telefone*</label>
+                <input type="text" name="Telefone" class="form-control" id="TeleInp" required placeholder="9999999999"/>
+            </div>
+
+            <div id="Email">
+                <label id="AlunoEmaiLab" class="form-label">Email*</label>
+                <input type="email" name="Email" class="form-control" id="EmailInp" placeholder="email@@.com" required />
+            </div>
+
+            <input type="hidden" value="1" name="tipo"/>
+
+
+            <div id="RA">
+                <label id="RALab" class="form-label">RA (Registro do Aluno)*</label>
+                <input type="text" name="RA" class="form-control" id="RAInp" required />
+            </div>
+        
+            <div id="Senha">
+                <label id="SenhaLab" class="form-label">Senha*</label>
+                <input type="password" name="Senha" class="form-control" id="SenhaInp" required/>
+            </div>
+            <div id="CheckLabEmail">
+                <input class="form-check-input" type="checkbox" value="True" id="flexCheckDefault" name="Autoriza_Email">
+                <label class="form-check-label" for="flexCheckDefault">
+                Autorizo o recebimento de Emails
+                </label>
+            </div>
+            <br />
+            <div id="CheckLabDados">
+                <input class="form-check-input" type="checkbox" value="True" id="flexCheckChecked" name="Autoriza_Dados">
+                <label class="form-check-label" for="flexCheckChecked">
+                Autorizo o uso de meus dados
+                </label>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-dark" id="ButtonCriar">Criar</button>
+
+        </form>
+    </div>
+
+</center>

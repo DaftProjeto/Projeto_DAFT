@@ -1,4 +1,5 @@
-﻿<head>
+﻿@model List<Projeto_DAFT.Entidades.RegraEntidade>
+<head>
 
     <link rel="stylesheet" href="/css/RegrasTCC.css" asp-append-version="true" />
 
@@ -13,25 +14,17 @@
 
 <div id="FundoTCCRegras">
     <div class="modal-header">
-    <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/Index">
-    <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;"/>
-    </a>
-    <h1 style="margin:auto;">Trabalho de Conclusão de Curso</h1>
+        <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/Index">
+            <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;"/>
+        </a>
+        <h1 style="margin:auto;">Trabalho de Conclusão de Curso</h1>
     </div>
     <div style="margin-left:30px;line-height: 1;padding-top:10px;">
-    <p>Para o envio deste, será necessário que as seguintes regras sejam cumpridas:</p>
-    <p>1 - Não abrevie as informações;</p>
-    <p>2 - Preencha seus dados pessoais e contatos telefônicos ;</p>
-    <p>3 - Email valido e que você acesse frequentemente;</p>
-    <p>4 - Informe seu RA da Fatec;</p>
-    <p>5 - Informe o nome completo do seu Orientador;</p>
-    <p>6 - O titulo do seu trabalho de Graduação deve ser exatamente igual ao do seu trabalho;</p>   
-    <p>7 - Arquivo do seu trabalho de Graduação deve ser em: PDF , WORD.</p>
-    <p>8 - Arquivo do Certificado de Aceite/Publicação do Artigo Cientifico em: PDF , WORD;</p>
-    <p>9 - Tamanho maximo dos Arquivos 10mb;</p>
-    <p>10 - Os Arquivos enviados devem ter o nome do aluno e Tipo. </p>
-    <p>Ex. fulano de tal - trabalho.pdf / fulano de tal-autorizacao.docx</p>
-    
+        <p>Para o envio deste, será necessário que as seguintes regras sejam cumpridas:</p>
+        @foreach (var item in Model)
+        {
+            <p>@item.Id - @item.Regra;</p>
+        }
     </div>
     <div class="modal-footer" style="position:relative;top:10px;">
         <a href="/Enviar/EnviarTCC" style="text-decoration:none;visibility:hidden;margin:auto;">

@@ -21,45 +21,45 @@
 
     <div id="FundoCadOrientador">
         <div class="modal-header" id="CadTextIco">
-            <a href="/Cadastro/Cadastro"> <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad" /></a>
+            <a href="/Cadastro/TipoCadastro"> <img src="/Imagens/botao-voltar.png" id="VoltarIcoCad" /></a>
             <h1 id="CadOri">Cadastro do Orientador</h1>
 
         </div>
 
         <img src="/Imagens/Orientador icone.png" id="OrientadorIcoCad" />
 
-        <form method="">
+        <form method="post" action="/Cadastro/SalvarUsuario">
 
             <div id="Nome">
                 <label id="OrientadorNomeLab" class="form-label">Nome*</label>
-                <input type="text" name="" class="form-control" id="NomeInp" required />
+                <input type="text" name="Nome" class="form-control" id="NomeInp" required />
             </div>
 
             <div id="Telefone">
                 <label id="OrientadorTeleLab" class="form-label">Telefone*</label>
-                <input type="tel" id="TeleInp" name="phone" class="form-control" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" placeholder="9999999999" required />
+                <input type="text" name="Telefone" class="form-control" id="TeleInp" required placeholder="9999999999" />
             </div>
 
             <div id="Email">
                 <label id="OrientadorEmaiLab" class="form-label">Email*</label>
-                <input type="email" name="" class="form-control" id="EmailInp" placeholder="email@@.com" required />
+                <input type="email" name="Email" class="form-control" id="EmailInp" placeholder="email@@.com" required />
             </div>
 
-
+            <input type="hidden" name="tipo" value="2" />
 
             <div id="Lattes">
-                <label id="LattesLab" class="form-label">Lattes*</label>
-                <input type="text" name="" class="form-control" id="LattesInp" required/>
+                <label id="LattesLab" class="form-label">Lattes</label>
+                <input type="text" name="Lattes" class="form-control" id="LattesInp" />
             </div>
 
             <div id="Senha">
-                <label id="SenhaLab" class="form-label">Senha*</label>
-                <input type="text" name="" class="form-control" id="SenhaInp" required/>
+                <label id="SenhaLab" class="form-label">Senha</label>
+                <input type="password" name="Senha" class="form-control" id="SenhaInp" />
             </div>
 
 
             <div id="CheckLabEmail">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                <input class="form-check-input" type="checkbox" name="Autoriza_Email" value="True" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
                     Autorizo o recebimento de Emails
                 </label>
@@ -67,7 +67,7 @@
             <br />
 
             <div id="CheckLabDados">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+                <input class="form-check-input" name="Autoriza_Dados" type="checkbox" value="True" id="flexCheckChecked">
                 <label class="form-check-label" for="flexCheckChecked">
                     Autorizo o uso de meus dados
                 </label>
