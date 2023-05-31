@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -191,14 +192,11 @@ namespace Projeto_DAFT.Controllers
 
 
 
-        public IActionResult Details(int id)
-        {
-            return View();
-        }
+        
 
 
 
-        public IActionResult Create()
+        public IActionResult CriarRegra()
         {
             return View();
         }
@@ -227,35 +225,30 @@ namespace Projeto_DAFT.Controllers
 
         }
 
-        public IActionResult Edit(int id)
 
+        [HttpGet]
+        public IActionResult AlterarRegra(int id)
         {
-
-            return View(contexto.Regra.Where(a => a.Id == id).FirstOrDefault());
+            //var aux = contexto.Regra.Where(x=> x.Id == id).ToList();
+            return View(contexto.Regra.Where(x => x.Id == id).ToList());
 
         }
 
-
-        public IActionResult Edit(int id, IFormCollection collection)
-
+        [HttpGet]
+        public IActionResult SalvarAlteracao(int id, IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(AltRegras));
-            }
-            catch
-            {
-                return View();
-            }
+
+            //contexto.Regra.Update(aux);
+            return View("Home/ListarRegras");
         }
 
-
-        public IActionResult Delete(int id)
+        [HttpGet]
+        public ActionResult RemoverRegra(int id)
 
         {
             contexto.Regra.Remove(contexto.Regra.Where(a => a.Id == id).FirstOrDefault());
             contexto.SaveChanges();
-            return RedirectToAction("AltRegras");
+            return View("/Home/ListarRegras");
         }
     }
 }

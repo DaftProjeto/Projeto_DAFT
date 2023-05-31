@@ -1,0 +1,14 @@
+﻿@Model Projeto_DAFT.Entidades.Regra
+
+<head>
+
+    <link rel="stylesheet" href="/css/EdiçãoRegras.css" asp-append-version="true" />
+
+</head>
+
+<div style="width: 90%;margin-left: 5%; margin-top: 10%;">
+    <form action="Home/SalvarAlteracao/" method="post">
+        <textarea>@Model.Regra</textarea>
+        <button type="submit">Finalizar</button>
+    </form>
+</div>
