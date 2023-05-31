@@ -34,14 +34,14 @@ namespace Projeto_DAFT.Controllers
         {
             return View();
         }
-        public IActionResult RegrasTCC()
+        public IActionResult ListarRegras()
         {
             return View(contexto.Regra.ToList());
         }
 
         public IActionResult RegrasAnteprojeto()
         {
-            return View(contexto.Regra.ToList());
+            return View(contexto.Regra.Where(a=>a.Id != 8).ToList());
         }
 
         /*
@@ -69,7 +69,7 @@ namespace Projeto_DAFT.Controllers
         */
 
 
-        //[Authorize(AuthenticationSchemes = "CookieAuthentication")]
+        [Authorize(AuthenticationSchemes = "CookieAuthentication")]
         public IActionResult Gerenciador_Atividades_Curriculares()
         {
 
@@ -176,12 +176,86 @@ namespace Projeto_DAFT.Controllers
 
 
 
+
+
+
+
+
         
 
-        public IActionResult EdiçãoRegras()
+
+        public IActionResult AltRegras()
+        {
+            return View(contexto.Regra.ToList());
+        }
+
+
+
+        public IActionResult Details(int id)
         {
             return View();
         }
 
+
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        public IActionResult Create(RegraEntidade collection)
+        {
+            try
+
+            {
+
+                contexto.Regra.Add(collection);
+
+                contexto.SaveChanges();
+
+                return RedirectToAction(nameof(AltRegras));
+
+            }
+
+            catch
+
+            {
+
+                return View();
+
+            }
+
+        }
+
+        public IActionResult Edit(int id)
+
+        {
+
+            return View(contexto.Regra.Where(a => a.Id == id).FirstOrDefault());
+
+        }
+
+
+        public IActionResult Edit(int id, IFormCollection collection)
+
+        {
+            try
+            {
+                return RedirectToAction(nameof(AltRegras));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+        public IActionResult Delete(int id)
+
+        {
+            contexto.Regra.Remove(contexto.Regra.Where(a => a.Id == id).FirstOrDefault());
+            contexto.SaveChanges();
+            return RedirectToAction("AltRegras");
+        }
     }
 }

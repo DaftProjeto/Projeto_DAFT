@@ -13,7 +13,7 @@ builder.Services.AddDbContext<Contexto>(
 
 builder.Services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", option =>
 {
-    option.LoginPath = "/Home/Entrar";
+    option.LoginPath = "/ContaBlock/Index";
     option.AccessDeniedPath = "/";
 });
 

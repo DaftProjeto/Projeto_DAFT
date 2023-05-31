@@ -23,21 +23,23 @@
 
     <h1 style="position:relative;top:5px;left:155px;font-family:serif;font-size:35px;">Entrar</h1>
     <img src="/Imagens/Icon_ModalLogin.png" width="200px" style="height:200px;position:relative;left:25%;right:25%;"/>
+        <form action="/Home/Login" method="post">
+            <p>
+                <label class="form-label" style="margin-left:2.5%;">Usuário</label>
+                <input type="text" name="usuario" class="form-control" style="position:relative;bottom:5px;width:95%;margin:auto;" required>
+            </p>
+            <p>
+                <label class="form-label" style="margin-left:2.5%;">Senha</label>
+                <input class="form-control" type="password" name="senha" style="position:relative;bottom:5px;width:95%;margin:auto;" required>
+            </p>
+            <center>
+            <p>
+                <a href="/ContaBlock/Index" class='btn'style='position:relative;background-color:black;color:white;'>Voltar</a>
+                <button  class="btn" style="position:relative;background-color:black;color:white;" type="submit">Entrar</button>
+            </p>
 
-        <p>
-            <label class="form-label" style="margin-left:2.5%;">Usuário</label>
-            <input type="text" name="usuario" class="form-control" style="position:relative;bottom:5px;width:95%;margin:auto;" required>
-        </p>
-        <p>
-            <label class="form-label" style="margin-left:2.5%;">Senha</label>
-            <input class="form-control" type="password" name="senha" style="position:relative;bottom:5px;width:95%;margin:auto;" required>
-        </p>
-        <center>
-        <p>
-            <a href="/ContaBlock/Index" class='btn'style='position:relative;background-color:black;color:white;'>Voltar</a>
-            <a href="" class="btn" style="position:relative;background-color:black;color:white;">Entrar</a>
-        </p>
-</center>
+            </center>
+        </form>
         </div>
 
 </body>

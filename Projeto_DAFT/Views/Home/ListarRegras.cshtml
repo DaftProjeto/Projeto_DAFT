@@ -1,0 +1,47 @@
+﻿<head>
+
+    <link rel="stylesheet" href="/css/EdiçãoRegras.css" asp-append-version="true" />
+
+</head>
+
+<div id="FundoEdiçãoRegras">
+    <div class="modal-header">
+        <a style="float:left;width:35px;height:35px; margin-left:10px;" href="/Home/Index">
+            <img src="/Imagens/botao-voltar.png" style="float:left;width:35px;height:35px;" />
+        </a>
+        <h1 style="margin:auto;position:relative;">Editar Regras</h1>
+    </div>
+                    
+    <table style="width:96%; margin-left:2%;margin-right:2%;margin-top: 2%;" class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Regra</th>
+                <th scope="col" style="position:relative;">Excluir</th>
+                <th scope="col" style="position:relative;text-align:end;">Editar</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="height: 28px;">
+                    <td>@item.Id</td>
+                    <td>@item.Regra</td>
+                    <td><a href=""><img src="/Imagens/trash-can.png" style="width:20px;margin-right:10px;float:right;" /></a></td>
+                    <td><a href=""><img src="/Imagens/pencil.png" style="width:20px;float:right;margin-right:10px;" /></a></td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+            
+   
+
+    
+
+    </div>
+
+

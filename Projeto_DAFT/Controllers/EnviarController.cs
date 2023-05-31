@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Projeto_DAFT.Entidades;
+using Projeto_DAFT.Models;
 
 namespace Projeto_DAFT.Controllers
 {
@@ -12,15 +13,31 @@ namespace Projeto_DAFT.Controllers
         {
             contexto = db;
         }
-        public IActionResult EnviarAnteprojeto()
+        public IActionResult EnviarAnteprojeto(int id)
         {
             var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
 
             var Nome = claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value;
+            var Id = int.Parse(claimsIdentity.FindFirst(System.Security.Claims.ClaimTypes.Sid)?.Value);
 
             //var aux = contexto.Usuario.Find(Nome);
 
-            List<ProfessorEntidade> model = contexto.Professor.Include(a => a.Usuario).ToList();
+            //FUNCIONANDO
+            //List<ProfessorEntidade> model = contexto.Professor.Include(a => a.Usuario).ToList();
+
+            //var usuario = contexto.Aluno.Find(Nome);
+            //var usuario = contexto.Aluno.Where(a=>a.Usuario.Nome == Nome);
+
+            var usuario = contexto.Aluno.Include(a => a.Usuario).FirstOrDefault(a=>a.UsuarioId == Id);
+
+            EnviarViewModel model = new EnviarViewModel
+            {
+                Aluno = usuario,
+                Usuario = usuario.Usuario,
+                ListaProfessor = contexto.Professor.Include(a=>a.Usuario).ToList()
+            };
+            
+            //contexto.Professor.Include(a => a.Usuario).ToList(), contexto.Aluno.Include(a => a.Usuario).ToList()
             return View(model);
         }
 
