@@ -29,12 +29,12 @@
         Gerenciamento de Atividades Curriculares
     </h1>
     <table class="table">
-
+      
         <thead class="table-dark">
             <tr style="border-radius:10px;position: sticky; top: 0; z-index: 0;">
                 <th scope="col">Curso</th>
                 <th scope="col">Nome do Aluno</th>
-                <th scope="col">RA</th>
+                <th scope="col" data-toggle="tooltip" data-placement="top" title="Registro do Aluno">RA</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Data de Envio</th>
                 <th scope="col">Revisão</th>
@@ -59,6 +59,7 @@
                     <td>@item.Aluno.RA</td>
                     <td>@item.Titulo</td>
                     <td>@item.Data_Entrega.ToShortDateString()</td>
+                    <td><a data-target="#ModalRevisao" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="" /></a></td>
                     <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
@@ -66,10 +67,11 @@
                             <image type="button" src="/Imagens/eye.png" style="width:20px;height:30px;width:25px;float:right;margin-right:10px;" id="eyes" />
                         </a>
                     </td>
-                    <td></td>
                 </tr>
                 
             }
+
+            <!--
                 <tr>
                     <td>Curso</td>
                     <td>Aluno.Id</td>
@@ -85,7 +87,7 @@
                     </td>
                     <td></td>
                 </tr>
-            
+            -->
 
         </tbody>
 

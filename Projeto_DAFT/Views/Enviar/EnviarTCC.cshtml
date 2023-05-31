@@ -29,18 +29,18 @@
                     <h5 style="">Dados Pessoais</h5>
 
                     <div class="col">
-                        <label for="validationCustom04" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" name="nome" />
+                        <label for="validationCustom04" class="form-label">Nome Completo*</label>
+                        <input type="text" class="form-control" name="nome" required/>
 
                     </div>
                     <div class="col">
-                        <label for="validationCustom04" class="form-label">Telefone</label>
-                        <input type="number" class="form-control" name="telefone" />
+                        <label for="validationCustom04" class="form-label">Telefone*</label>
+                        <input type="number" class="form-control" name="telefone" required/>
 
                     </div>
                     <div class="col">
-                        <label for="validationCustom04" class="form-label">Email</label>
-                        <input type="text" class="form-control" name="email" />
+                        <label for="validationCustom04" class="form-label">E-mail*</label>
+                        <input type="text" class="form-control" name="email" required/>
 
                     </div>
                 </div>
@@ -48,7 +48,7 @@
             <div class="row">
                 <h5 style="margin-top:20px;">Dados Academicos</h5>
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Curso</label>
+                    <label for="validationCustom04" class="form-label">Curso*</label>
 
                     <select class="form-select" id="validationCustom04" required>
                         <option selected disabled style="visibility:hidden; display:none">Selecione o Curso...</option>
@@ -61,7 +61,7 @@
 
                 </div>
                 <div class="col">
-                    <label for="validationCustom05" class="form-label">Turno</label>
+                    <label for="validationCustom05" class="form-label">Turno*</label>
                     <select class="form-select" id="validationCustom04" required>
                         <option value="" style="visibility:hidden; display:none;">Selecione o turno...</option>
                         <option value="">Manhã</option>
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="col">
-                    <label for="validationCustom05" class="form-label">Orientador</label>
+                    <label for="validationCustom05" class="form-label">Orientador*</label>
                     <select class="form-select" id="validationCustom04" required>
                         <option value="" style="visibility:hidden; display:none;">Selecione o Orientador...</option>
                         <option value="">Carlos</option>
@@ -86,8 +86,8 @@
             <div class="row" style="position:relative;top:10px;">
 
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" name="titulo" />
+                    <label for="validationCustom04" class="form-label">Titulo*</label>
+                    <input type="text" class="form-control" name="titulo" required/>
 
                 </div>
                 <div class="col">
@@ -97,8 +97,8 @@
                 </div>
 
                 <div class="col">
-                    <label for="validationCustom04" class="form-label">RA</label>
-                    <input type="number" class="form-control" name="ra" style="float:right;" />
+                    <label for="validationCustom04" class="form-label">RA(Registro do Aluno)*</label>
+                    <input type="number" class="form-control" name="ra" style="float:right;" required/>
                 </div>
             </div>
 
@@ -210,10 +210,10 @@
                     <div class="col" style="padding-left:30px;">
                         <label for="validationCustom04" class="form-label">Tipo de Trabalho</label>
 
-                        <select style="width:350px;" class="form-select" id="validationCustom04" required>
+                        <select style="width:350px;" class="form-select" id="TrabSelect" required>
                             <option selected disabled style="visibility:hidden; display:none">Selecione o Tipo de Trabalho...</option>
-                            <option value="">Monografia</option>
-                            <option>Artigo Científico</option>
+                            <option value="1">Monografia</option>
+                            <option value="2">Artigo Científico</option>
 
                         </select>
                     </div>
@@ -230,7 +230,7 @@
                             
 
                         </div>
-                        <div class="" style="margin-bottom:-30px; margin-top:20px;">
+                        <div class="" style="margin-bottom:-30px; margin-top:20px; visibility:hidden;" id="ConjuntoEnvioOpc">
                             <label for="validationCustom04" class="form-label">Enviar Documento</label>
                             <div class="col input-group" style="">
                                 <label class="btn" id="Enviar_Arquivo" style="">
@@ -289,6 +289,26 @@
     const btn1 = document.getElementById("1");
     const btn3 = document.getElementById("3");
     const btn4 = document.getElementById("4");
+    const btnEnvioTCC = document.getElementById("BotProxAnteEnviar");
+    const SelectTrabInp = document.getElementById("TrabSelect");
+    const ConjuntoEnvioOpc = document.getElementById("ConjuntoEnvioOpc");
+
+
+    SelectTrabInp.onchange = function () {
+        var ValorInp = document.getElementById("TrabSelect").value;
+
+
+
+        if (ValorInp == 1) {
+            ConjuntoEnvioOpc.style.visibility = "visible";
+        }
+        else if (ValorInp == 2) {
+            ConjuntoEnvioOpc.style.visibility = "hidden";
+        }
+    };
+
+
+
 
 
     btn2.onclick = function () {
