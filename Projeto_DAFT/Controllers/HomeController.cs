@@ -47,6 +47,11 @@ namespace Projeto_DAFT.Controllers
             return View(contexto.Regra.Where(a=>a.Id != 8).ToList());
         }
 
+        public IActionResult RegrasTCC()
+        {
+            return View(contexto.Regra.ToList());
+        }
+
         /*
          * 
          * COISAS Q TEM Q IR NO GERENCIADOR
