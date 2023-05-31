@@ -16,6 +16,8 @@
        
         public string Curso { get; set; }
         public DateTime Data_Entrega { get; set; }
-
+        //
+        //public DateTime Data_Entrega = DateTime.Now;
+        
     }
 }

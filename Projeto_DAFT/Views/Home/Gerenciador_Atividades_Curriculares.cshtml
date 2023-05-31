@@ -41,21 +41,13 @@
                 <th scope="col">Agendamento</th>
                 <th scope="col">Aprovação</th>
                 <form class="d-flex" role="search">
-                <th style="width:200px;position: sticky; top: 0; z-index: 1;">
-
-                    <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
-                </th>
-
-                </form>
-    </tr>
-    </thead>
-                    <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
-                </th>
+                    <th style="width:200px;position: sticky; top: 0; z-index: 1;">
+                        <input class="form-control" type="text" id="InputS" placeholder="Pesquisar..." aria-label="Search" style="width:200px;position:relative;float:right;">
+                    </th>
 
                 </form>
             </tr>
         </thead>
-
         <tbody style="background-color:white;border-radius:10px;height:40px;" id="tb">
 
         
@@ -66,7 +58,7 @@
                     <td>@item.Aluno.Usuario.Nome</td>
                     <td>@item.Aluno.RA</td>
                     <td>@item.Titulo</td>
-                    <td>@item.Data_Entrega</td>
+                    <td>@item.Data_Entrega.ToShortDateString()</td>
                     <td><a data-target="#ModalAgendamento" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgagen" /></a></td>
                     <td><a data-target="#ModalAprovado" data-toggle="modal" class="botaoImg"><img src="/Imagens/Aguardando icon.png" style="width:20px;" id="imgapro" /></a></td>
                     <td>
@@ -126,10 +118,6 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-       <form>
-        <div class="modal-body">
-            <label>Nome do aluno:</label>
-            <input style="display:block;" readonly/>
         <form>
             <div class="modal-body">
                 <label>Nome do aluno:</label>

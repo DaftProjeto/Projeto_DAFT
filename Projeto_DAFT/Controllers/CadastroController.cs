@@ -80,27 +80,8 @@ namespace Projeto_DAFT.Controllers
         public ActionResult CreateProfessor(string r, int u, int tipo)
         {
 
-            if (tipo == 2)
-            {
-                contexto.Database.ExecuteSqlRaw("INSERT INTO PROFESSOR (Matricula, UsuarioId) VALUES ('" + r + "', " + u + ")");
-                contexto.SaveChanges();
-                var id_prof = contexto.Professor.OrderBy(x => x.Id).LastOrDefault().Id;
-                contexto.Database.ExecuteSqlRaw("INSERT INTO PROF_BANCA (ProfessorId) VALUES (" + id_prof + ");");
-                contexto.SaveChanges();
-            }
-            else if(tipo == 3) 
-            {
-                contexto.Database.ExecuteSqlRaw("INSERT INTO PROFESSOR (Matricula, UsuarioId) VALUES ('" + r + "', " + u + ")");
-                contexto.SaveChanges();
-                var id_prof = contexto.Professor.OrderBy(x => x.Id).LastOrDefault().Id;
-                contexto.Database.ExecuteSqlRaw("INSERT INTO PROF_ORIENTADOR (ProfessorId) VALUES (" + id_prof + ");");
-                contexto.SaveChanges();
-            }
-            else
-            {
-                return RedirectToAction("Home/Index");
-            }
-            contexto.SaveChanges();
+            contexto.Database.ExecuteSqlRaw("INSERT INTO PROFESSOR (Matricula, UsuarioId) VALUES ('" + r + "', " + u + ")");
+            contexto.SaveChanges();         
             return RedirectToAction("TipoCadastro");
         }
 
